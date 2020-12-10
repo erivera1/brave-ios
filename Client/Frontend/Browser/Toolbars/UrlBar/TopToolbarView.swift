@@ -95,8 +95,16 @@ class TopToolbarView: UIView, ToolbarProtocol {
     // MARK: - Views
     fileprivate var locationTextField: UrlBarTextField?
     
-    lazy var locationView: TabLocationView = {
-        let locationView = TabLocationView()
+//    lazy var locationView: TabLocationView = {
+//        let locationView = TabLocationView()
+//        locationView.translatesAutoresizingMaskIntoConstraints = false
+//        locationView.readerModeState = ReaderModeState.unavailable
+//        locationView.delegate = self
+//        return locationView
+//    }()
+    // CHANGES MADE BY EMR
+    lazy var locationView: OsirisTabLocationView = {
+        let locationView = OsirisTabLocationView()
         locationView.translatesAutoresizingMaskIntoConstraints = false
         locationView.readerModeState = ReaderModeState.unavailable
         locationView.delegate = self

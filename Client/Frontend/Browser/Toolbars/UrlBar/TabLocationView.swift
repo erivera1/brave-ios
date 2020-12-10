@@ -42,7 +42,7 @@ class TabLocationView: UIView {
     var longPressRecognizer: UILongPressGestureRecognizer!
     var tapRecognizer: UITapGestureRecognizer!
     var contentView: UIStackView!
-    private var tabObservers: TabObservers!
+    var tabObservers: TabObservers!
 
     @objc dynamic var baseURLFontColor: UIColor = TabLocationViewUX.baseURLFontColor {
         didSet { updateTextWithURL() }
@@ -202,60 +202,60 @@ class TabLocationView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        self.tabObservers = registerFor(.didChangeContentBlocking, .didGainFocus, queue: .main)
-
-        longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(longPressLocation))
-        longPressRecognizer.delegate = self
-
-        tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapLocation))
-        tapRecognizer.delegate = self
-
-        addGestureRecognizer(longPressRecognizer)
-        addGestureRecognizer(tapRecognizer)
-        
-        var optionSubviews = [readerModeButton, reloadButton, separatorLine, shieldsButton]
-        separatorLine.isUserInteractionEnabled = false
-        
-        optionSubviews.append(rewardsButton)
-        
-        let buttonContentEdgeInsets = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
-        optionSubviews.forEach {
-            ($0 as? CustomSeparatorView)?.layoutMargins = UIEdgeInsets(top: 0, left: 2, bottom: 0, right: 2)
-            ($0 as? UIButton)?.contentEdgeInsets = buttonContentEdgeInsets
-            $0.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
-            $0.setContentHuggingPriority(.defaultHigh, for: .horizontal)
-        }
-        optionSubviews.forEach(tabOptionsStackView.addArrangedSubview)
-        
-        urlTextField.setContentHuggingPriority(.defaultLow, for: .horizontal)
-        
-        let subviews = [lockImageView, urlTextField, tabOptionsStackView]
-        contentView = UIStackView(arrangedSubviews: subviews)
-        contentView.distribution = .fill
-        contentView.alignment = .center
-        contentView.layoutMargins = UIEdgeInsets(top: 0, left: TabLocationViewUX.spacing, bottom: 0, right: 0)
-        contentView.isLayoutMarginsRelativeArrangement = true
-        contentView.insetsLayoutMarginsFromSafeArea = false
-        contentView.spacing = 10
-        contentView.setCustomSpacing(5, after: urlTextField)
-        
-        tabOptionsStackView.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 6)
-        tabOptionsStackView.isLayoutMarginsRelativeArrangement = true
-        addSubview(contentView)
-        
-        contentView.snp.makeConstraints { make in
-            make.leading.trailing.top.bottom.equalTo(self)
-        }
-        
-        tabOptionsStackView.snp.makeConstraints { make in
-            make.top.bottom.equalTo(contentView)
-        }
-
-        // Setup UIDragInteraction to handle dragging the location
-        // bar for dropping its URL into other apps.
-        let dragInteraction = UIDragInteraction(delegate: self)
-        dragInteraction.allowsSimultaneousRecognitionDuringLift = true
-        self.addInteraction(dragInteraction)
+//        self.tabObservers = registerFor(.didChangeContentBlocking, .didGainFocus, queue: .main)
+//
+//        longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(longPressLocation))
+//        longPressRecognizer.delegate = self
+//
+//        tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapLocation))
+//        tapRecognizer.delegate = self
+//
+//        addGestureRecognizer(longPressRecognizer)
+//        addGestureRecognizer(tapRecognizer)
+//
+//        var optionSubviews = [readerModeButton, reloadButton, separatorLine, shieldsButton]
+//        separatorLine.isUserInteractionEnabled = false
+//
+//        optionSubviews.append(rewardsButton)
+//
+//        let buttonContentEdgeInsets = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
+//        optionSubviews.forEach {
+//            ($0 as? CustomSeparatorView)?.layoutMargins = UIEdgeInsets(top: 0, left: 2, bottom: 0, right: 2)
+//            ($0 as? UIButton)?.contentEdgeInsets = buttonContentEdgeInsets
+//            $0.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
+//            $0.setContentHuggingPriority(.defaultHigh, for: .horizontal)
+//        }
+//        optionSubviews.forEach(tabOptionsStackView.addArrangedSubview)
+//
+//        urlTextField.setContentHuggingPriority(.defaultLow, for: .horizontal)
+//
+//        let subviews = [lockImageView, urlTextField, tabOptionsStackView]
+//        contentView = UIStackView(arrangedSubviews: subviews)
+//        contentView.distribution = .fill
+//        contentView.alignment = .center
+//        contentView.layoutMargins = UIEdgeInsets(top: 0, left: TabLocationViewUX.spacing, bottom: 0, right: 0)
+//        contentView.isLayoutMarginsRelativeArrangement = true
+//        contentView.insetsLayoutMarginsFromSafeArea = false
+//        contentView.spacing = 10
+//        contentView.setCustomSpacing(5, after: urlTextField)
+//
+//        tabOptionsStackView.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 6)
+//        tabOptionsStackView.isLayoutMarginsRelativeArrangement = true
+//        addSubview(contentView)
+//
+//        contentView.snp.makeConstraints { make in
+//            make.leading.trailing.top.bottom.equalTo(self)
+//        }
+//
+//        tabOptionsStackView.snp.makeConstraints { make in
+//            make.top.bottom.equalTo(contentView)
+//        }
+//
+//        // Setup UIDragInteraction to handle dragging the location
+//        // bar for dropping its URL into other apps.
+//        let dragInteraction = UIDragInteraction(delegate: self)
+//        dragInteraction.allowsSimultaneousRecognitionDuringLift = true
+//        self.addInteraction(dragInteraction)
     }
 
     required init(coder: NSCoder) {

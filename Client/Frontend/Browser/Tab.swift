@@ -88,7 +88,7 @@ class Tab: NSObject {
     /// The tabs new tab page controller.
     ///
     /// Should be setup in BVC then assigned here for future use.
-    var newTabPageViewController: NewTabPageViewController? {
+    var newTabPageViewController: OsirisNewTabPageViewController? {
         willSet {
             if newValue == nil {
                 deleteNewTabPageController()

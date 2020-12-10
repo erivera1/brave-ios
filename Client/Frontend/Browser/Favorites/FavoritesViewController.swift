@@ -12,7 +12,8 @@ private let log = Logger.browserLogger
 
 private class FavoritesHeaderView: UICollectionReusableView {
     let label = UILabel().then {
-        $0.text = "Favorites"
+        //EMR removed Favorites text
+        $0.text = ""
         $0.font = .systemFont(ofSize: 18, weight: .semibold)
     }
     override init(frame: CGRect) {
@@ -74,7 +75,7 @@ class FavoritesViewController: UIViewController, Themeable {
         
         view.addSubview(backgroundView)
         view.addSubview(collectionView)
-        
+    
         backgroundView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
@@ -105,7 +106,8 @@ class FavoritesViewController: UIViewController, Themeable {
     
     func applyTheme(_ theme: Theme) {
         let blurStyle: UIBlurEffect.Style = theme.isDark ? .dark : .extraLight
-        backgroundView.effect = UIBlurEffect(style: blurStyle)
+        // EMR CHANGES
+//        backgroundView.effect = UIBlurEffect(style: blurStyle)
         backgroundView.contentView.backgroundColor = theme.colors.home.withAlphaComponent(0.5)
         collectionView.reloadSections(IndexSet(integer: 0))
     }

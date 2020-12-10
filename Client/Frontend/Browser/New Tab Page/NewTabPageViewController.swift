@@ -114,8 +114,9 @@ class NewTabPageViewController: UIViewController, Themeable {
         collectionView = NewTabCollectionView(frame: .zero, collectionViewLayout: layout)
         super.init(nibName: nil, bundle: nil)
         
+        //OSIRIS EMR
         sections = [
-            StatsSectionProvider(),
+//            StatsSectionProvider(),
             FavoritesSectionProvider(action: { [weak self] bookmark, action in
                 self?.handleBookmarkAction(bookmark: bookmark, action: action)
             }, legacyLongPressAction: { [weak self] alertController in
@@ -124,9 +125,9 @@ class NewTabPageViewController: UIViewController, Themeable {
             FavoritesOverflowSectionProvider(action: { [weak self] in
                 self?.delegate?.focusURLBar()
             }),
-            DuckDuckGoCalloutSectionProvider(profile: profile, action: { [weak self] in
-                self?.delegate?.tappedDuckDuckGoCallout()
-            })
+//            DuckDuckGoCalloutSectionProvider(profile: profile, action: { [weak self] in
+//                self?.delegate?.tappedDuckDuckGoCallout()
+//            })
         ]
       
         // This is a one-off view, adding it to the NTP only if necessary.
@@ -151,6 +152,11 @@ class NewTabPageViewController: UIViewController, Themeable {
         collectionView.delegate = self
         collectionView.dataSource = self
         applyTheme(Theme.of(tab))
+        
+        //OSIRIS EMR
+//        collectionView.isHidden = true
+        backgroundButtonsView.isHidden = true
+        backgroundView.isHidden = true
         
         background.changed = { [weak self] in
             self?.setupBackgroundImage()
@@ -194,9 +200,17 @@ class NewTabPageViewController: UIViewController, Themeable {
         backgroundView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
+        
         collectionView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
+        
+        //OSIRIS EMR
+        collectionView.snp.updateConstraints {
+            (make) in
+            make.top.equalTo(20)
+        }
+        
         feedOverlayView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
@@ -215,7 +229,7 @@ class NewTabPageViewController: UIViewController, Themeable {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        checkForUpdatedFeed()
+//        checkForUpdatedFeed()
     }
     
     override func viewDidLayoutSubviews() {

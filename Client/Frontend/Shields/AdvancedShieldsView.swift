@@ -96,8 +96,9 @@ extension AdvancedShieldsView {
             return l
         }()
         
+        //OSIRIS EMR
         let toggleSwitch = UISwitch().then {
-            $0.appearanceOnTintColor = BraveUX.braveOrange
+            $0.appearanceOnTintColor = OsirisUX.osirisRoyalBlue
         }
         var valueToggled: ((Bool) -> Void)?
         

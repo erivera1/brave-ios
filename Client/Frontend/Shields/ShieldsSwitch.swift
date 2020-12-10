@@ -203,12 +203,18 @@ class ShieldsSwitch: UIControl {
     }
     
     private let steps: [AnimationStep] = [
-        .init(colors: [0xFFA73B, 0xFF7654], shadow: 0xFF7654),
-        .init(colors: [0xFF7654, 0xFB542B], shadow: 0xFB542B),
-        .init(colors: [0xFB542B, 0xF7241C], shadow: 0xF7241C),
-        .init(colors: [0xF7241C, 0xFC4F82], shadow: 0xFC4F82),
-        .init(colors: [0xFC4F82, 0xFFA73B], shadow: 0xFFA73B),
-        .init(colors: [0xFFA73B, 0xFF7654], shadow: 0xFF7654)
+        .init(colors: [0xC7E4F3, 0x008EDB], shadow: 0x008EDB),
+        .init(colors: [0x008EDB, 0xC7E4F3], shadow: 0xC7E4F3),
+        .init(colors: [0xC7E4F3, 0x008EDB], shadow: 0x008EDB),
+        .init(colors: [0x008EDB, 0xC7E4F3], shadow: 0xC7E4F3),
+        .init(colors: [0xC7E4F3, 0x008EDB], shadow: 0x008EDB),
+        .init(colors: [0x008EDB, 0xC7E4F3], shadow: 0xC7E4F3)
+//        .init(colors: [0xFFA73B, 0xFF7654], shadow: 0xFF7654),
+//        .init(colors: [0xFF7654, 0xFB542B], shadow: 0xFB542B),
+//        .init(colors: [0xFB542B, 0xF7241C], shadow: 0xF7241C),
+//        .init(colors: [0xF7241C, 0xFC4F82], shadow: 0xFC4F82),
+//        .init(colors: [0xFC4F82, 0xFFA73B], shadow: 0xFFA73B),
+//        .init(colors: [0xFFA73B, 0xFF7654], shadow: 0xFF7654)
     ]
     
     private func beginGradientAnimations() {

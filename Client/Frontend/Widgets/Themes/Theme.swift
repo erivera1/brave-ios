@@ -30,7 +30,7 @@ class Theme: Equatable, Decodable {
     
     enum DefaultTheme: String, RepresentableOptionType {
         case system = "Z71ED37E-EC3E-436E-AD5F-B22748306A6B"
-        case light = "ACE618A3-D6FC-45A4-94F2-1793C40AE927"
+        case light = "EMR618A3-D6FC-45A4-94F2-1793C40A1027"//"ACE618A3-D6FC-45A4-94F2-1793C40AE927"
         case dark = "B900A41F-2C02-4664-9DE4-C170956339AC"
         case `private` = "C5CB0D9A-5467-432C-AB35-1A78C55CFB41"
         

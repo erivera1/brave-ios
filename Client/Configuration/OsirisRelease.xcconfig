@@ -1,0 +1,27 @@
+// Copyright 2020 The Brave Authors. All rights reserved.
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+#include "Base.xcconfig"
+#include "Local.xcconfig"
+
+MOZ_BUNDLE_DISPLAY_NAME = Osiris
+
+BRAVE_API_KEY = key
+
+// Bundle Identifier
+ MOZ_BUNDLE_ID = decenternet.osiris-2.ios.Osiris
+
+// Flag to indicate if we want to include the debug settings bundle or not
+INCLUDE_SETTINGS_BUNDLE = YES
+
+// Defines Swift Flags, (used as #if/#endif) inside *Swift* code
+// BASE 'inheritence' at end, due to dynamic nature of those flags
+OTHER_SWIFT_FLAGS=-DMOZ_CHANNEL_RELEASE $(OTHER_SWIFT_FLAGS_BASE)
+
+ENABLE_TESTABILITY = YES
+
+

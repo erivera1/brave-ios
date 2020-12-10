@@ -43,7 +43,8 @@ private struct BrowserViewControllerUX {
 
 class BrowserViewController: UIViewController {
     var webViewContainer: UIView!
-    var topToolbar: TopToolbarView!
+//    var topToolbar: TopToolbarView!
+    var topToolbar: OsirisTopToolbarView!
     var tabsBar: TabsBarViewController!
     var clipboardBarDisplayHandler: ClipboardBarDisplayHandler?
     var readerModeBar: ReaderModeBarView?
@@ -620,7 +621,7 @@ class BrowserViewController: UIViewController {
         view.addLayoutGuide(pageOverlayLayoutGuide)
 
         webViewContainerBackdrop = UIView()
-        webViewContainerBackdrop.backgroundColor = UIColor.Photon.grey50
+        webViewContainerBackdrop.backgroundColor = UIColor.Photon.blue50
         webViewContainerBackdrop.alpha = 0
         view.addSubview(webViewContainerBackdrop)
 
@@ -637,9 +638,10 @@ class BrowserViewController: UIViewController {
         view.addSubview(topTouchArea)
 
         // Setup the URL bar, wrapped in a view to get transparency effect
-        topToolbar = TopToolbarView()
+        topToolbar = OsirisTopToolbarView()//TopToolbarView()
         topToolbar.translatesAutoresizingMaskIntoConstraints = false
         topToolbar.delegate = self
+//        topToolbar.delegateOsiris = self
         topToolbar.tabToolbarDelegate = self
         header = UIStackView().then {
             $0.axis = .vertical
@@ -883,7 +885,7 @@ class BrowserViewController: UIViewController {
     }
 
     override func viewDidAppear(_ animated: Bool) {
-        presentOnboardingIntro()
+//        presentOnboardingIntro()
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self.presentVPNCallout()
         }
@@ -1147,11 +1149,11 @@ class BrowserViewController: UIViewController {
         super.updateViewConstraints()
     }
     
-    private(set) var favoritesController: FavoritesViewController?
+    private(set) var favoritesController: OsirisFavoritesViewController?
     
     private func displayFavoritesController() {
         if favoritesController == nil {
-            let favoritesController = FavoritesViewController { [weak self] bookmark, action in
+            let favoritesController = OsirisFavoritesViewController { [weak self] bookmark, action in
                 self?.handleBookmarkAction(bookmark: bookmark, action: action)
             }
             favoritesController.applyTheme(Theme.of(tabManager.selectedTab))
@@ -1195,7 +1197,7 @@ class BrowserViewController: UIViewController {
     fileprivate func showNewTabPageController() {
         guard let selectedTab = tabManager.selectedTab else { return }
         if selectedTab.newTabPageViewController == nil {
-            let ntpController = NewTabPageViewController(tab: selectedTab,
+            let ntpController = OsirisNewTabPageViewController(tab: selectedTab,
                                                          profile: profile,
                                                          dataSource: backgroundDataSource,
                                                          feedDataSource: feedDataSource,

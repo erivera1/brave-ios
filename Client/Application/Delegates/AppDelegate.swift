@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UIViewControllerRestorati
     }
 
     var window: UIWindow?
-    var browserViewController: BrowserViewController!
+    var browserViewController: OsirisBrowserViewController!
     var rootViewController: UIViewController!
     weak var profile: Profile?
     var tabManager: TabManager!
@@ -158,7 +158,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UIViewControllerRestorati
         // the simulator via Xcode will count as a "crash" and lead to restore popups in the subsequent launch
         let crashedLastSession = !Preferences.AppState.backgroundedCleanly.value && AppConstants.buildChannel != .debug
         Preferences.AppState.backgroundedCleanly.value = false
-        browserViewController = BrowserViewController(profile: self.profile!, tabManager: self.tabManager, crashedLastSession: crashedLastSession)
+        browserViewController = OsirisBrowserViewController(profile: self.profile!, tabManager: self.tabManager, crashedLastSession: crashedLastSession)
+//        browserViewController = BrowserViewController(profile: self.profile!, tabManager: self.tabManager, crashedLastSession: crashedLastSession)
         browserViewController.edgesForExtendedLayout = []
 
         // Add restoration class, the factory that will return the ViewController we will restore with.
