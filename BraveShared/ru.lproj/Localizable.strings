@@ -104,7 +104,7 @@
 "OBRewardsDetailInAdRegion" = "Зарабатывайте баллы и вознаграждайте авторов контента, пользуясь браузером.";
 
 /* Title for rewards onboarding screen */
-"OBRewardsTitle" = "Brave Rewards";
+"OBRewardsTitle" = "Osiris Rewards";
 
 /* Save button to save current selection */
 "OBSaveButton" = "Сохранить";
@@ -459,7 +459,7 @@
 "today.allSources" = "Все источники";
 
 /* The name of the feature */
-"today.braveToday" = "Brave Today";
+"today.braveToday" = "Osiris Today";
 
 /* No comment provided by engineer. */
 "today.contentAvailableButtonTitle" = "Есть новый контент";

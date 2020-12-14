@@ -104,7 +104,7 @@
 "OBRewardsDetailInAdRegion" = "Ottieni dei token e mentre navighi potrai premiare gli autori per i contenuti che hanno creato.";
 
 /* Title for rewards onboarding screen */
-"OBRewardsTitle" = "Brave Rewards";
+"OBRewardsTitle" = "Osiris Rewards";
 
 /* Save button to save current selection */
 "OBSaveButton" = "Salva";
@@ -459,7 +459,7 @@
 "today.allSources" = "Tutte le fonti";
 
 /* The name of the feature */
-"today.braveToday" = "Brave Today";
+"today.braveToday" = "Osiris Today";
 
 /* No comment provided by engineer. */
 "today.contentAvailableButtonTitle" = "Nuovi contenuti disponibili";

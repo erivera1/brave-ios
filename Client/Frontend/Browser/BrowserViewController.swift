@@ -50,7 +50,7 @@ class BrowserViewController: UIViewController {
     var readerModeBar: ReaderModeBarView?
     var readerModeCache: ReaderModeCache
     var statusBarOverlay: UIView!
-    fileprivate(set) var toolbar: BottomToolbarView?
+    fileprivate(set) var toolbar: OsirisBottomToolbarView?//BottomToolbarView?
     var searchController: SearchViewController?
     fileprivate var screenshotHelper: ScreenshotHelper!
     fileprivate var homePanelIsInline = false
@@ -487,7 +487,7 @@ class BrowserViewController: UIViewController {
         toolbar = nil
 
         if showToolbar {
-            toolbar = BottomToolbarView()
+            toolbar = OsirisBottomToolbarView()//BottomToolbarView()
             toolbar?.setSearchButtonState(url: tabManager.selectedTab?.url)
             footer.addSubview(toolbar!)
             toolbar?.tabToolbarDelegate = self

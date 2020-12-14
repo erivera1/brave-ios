@@ -104,7 +104,7 @@
 "OBRewardsDetailInAdRegion" = "ブラウジング中にBATポイントを獲得し、同時にコンテンツクリエイターに還元することができます";
 
 /* Title for rewards onboarding screen */
-"OBRewardsTitle" = "Brave Rewards";
+"OBRewardsTitle" = "Osiris Rewards";
 
 /* Save button to save current selection */
 "OBSaveButton" = "保存";
@@ -459,7 +459,7 @@
 "today.allSources" = "全てのソース";
 
 /* The name of the feature */
-"today.braveToday" = "Brave Today";
+"today.braveToday" = "Osiris Today";
 
 /* No comment provided by engineer. */
 "today.contentAvailableButtonTitle" = "利用可能な新しいコンテンツ";

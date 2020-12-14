@@ -203,10 +203,10 @@
 "BravePanel" = "Панель Brave";
 
 /* Brave Rewards settings title */
-"BraveRewardsTitle" = "Brave Rewards";
+"BraveRewardsTitle" = "Osiris Rewards";
 
 /* No comment provided by engineer. */
-"BraveShieldsAndPrivacy" = "Brave Shields и конфиденциальность";
+"BraveShieldsAndPrivacy" = "Osiris Shields и конфиденциальность";
 
 /* Sync page title */
 "BraveSync" = "Синхронизация";

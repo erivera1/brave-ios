@@ -175,7 +175,7 @@ class SettingsViewController: TableViewController {
                 Row(text: Strings.braveShieldsAndPrivacy, selection: { [unowned self] in
                     let controller = BraveShieldsAndPrivacySettingsController(profile: self.profile, tabManager: self.tabManager, feedDataSource: self.feedDataSource)
                     self.navigationController?.pushViewController(controller, animated: true)
-                }, image: #imageLiteral(resourceName: "settings-shields"), accessory: .disclosureIndicator)
+                }, image: #imageLiteral(resourceName: "Osiris_Adsblocking_enabled"), accessory: .disclosureIndicator)
             ]
         )
         

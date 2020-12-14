@@ -9,7 +9,6 @@ import SnapKit
 import XCGLogger
 import BraveShared
 
-
 protocol OsirisTabLocationViewDelegate {
     func tabLocationViewDidTapLocation(_ tabLocationView: OsirisTabLocationView)
     func tabLocationViewDidLongPressLocation(_ tabLocationView: OsirisTabLocationView)
@@ -28,7 +27,6 @@ protocol OsirisTabLocationViewDelegate {
 }
 
 class OsirisTabLocationView: TabLocationView {
-    
     
     var delegateOsiris: OsirisTabLocationViewDelegate?
     
@@ -132,7 +130,6 @@ class OsirisTabLocationView: TabLocationView {
         fatalError("init(coder:) has not been implemented")
     }
 }
-
 
 private class CustomSeparatorView: UIView {
     

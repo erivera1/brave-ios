@@ -38,7 +38,7 @@
 "BraveRewardsAdNotificationsReceived" = "Notificaciones de anuncios recibidas este mes";
 
 /* No comment provided by engineer. */
-"BraveRewardsAdNotificationTitle" = "Brave Rewards";
+"BraveRewardsAdNotificationTitle" = "Osiris Rewards";
 
 /* No comment provided by engineer. */
 "BraveRewardsAdsEstimatedEarnings" = "Estimación de recompensas pendientes";
@@ -299,7 +299,7 @@
 "BraveRewardsOpen" = "Abrir";
 
 /* No comment provided by engineer. */
-"BraveRewardsPanelTitle" = "Brave Rewards";
+"BraveRewardsPanelTitle" = "Osiris Rewards";
 
 /* No comment provided by engineer. */
 "BraveRewardsPaymentDate" = "Fecha del siguiente pago";

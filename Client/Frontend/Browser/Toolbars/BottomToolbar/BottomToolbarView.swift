@@ -10,21 +10,21 @@ import BraveShared
 class BottomToolbarView: UIView, ToolbarProtocol {
     weak var tabToolbarDelegate: ToolbarDelegate?
 
-    let tabsButton = TabsButton(top: false)
-    let forwardButton = ToolbarButton(top: false)
-    let backButton = ToolbarButton(top: false)
-    let shareButton = ToolbarButton(top: false)
-    let addTabButton = ToolbarButton(top: false)
-    let searchButton = ToolbarButton(top: false).then {
+    var tabsButton = TabsButton(top: false)
+    var forwardButton = ToolbarButton(top: false)
+    var backButton = ToolbarButton(top: false)
+    var shareButton = ToolbarButton(top: false)
+    var addTabButton = ToolbarButton(top: false)
+    var searchButton = ToolbarButton(top: false).then {
         $0.isHidden = true
     }
     let menuButton = ToolbarButton(top: false)
-    let actionButtons: [Themeable & UIButton]
+    var actionButtons: [Themeable & UIButton]
 
     var helper: ToolbarHelper?
-    private let contentView = UIStackView()
+    var contentView = UIStackView()
 
-    fileprivate override init(frame: CGRect) {
+    override init(frame: CGRect) {
         actionButtons = [backButton, forwardButton, addTabButton, searchButton, tabsButton, menuButton]
         super.init(frame: frame)
         setupAccessibility()
