@@ -1121,11 +1121,14 @@
 		FC54E5042579DB88005F6E42 /* OsirisBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC54E5032579DB88005F6E42 /* OsirisBrowserViewController.swift */; };
 		FC54E511257A083C005F6E42 /* OsirisTabLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC54E510257A083C005F6E42 /* OsirisTabLocationView.swift */; };
 		FC54E527257A1C99005F6E42 /* OsirisTopToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC54E526257A1C99005F6E42 /* OsirisTopToolbarView.swift */; };
+		FC65ACA02589947000E220CE /* OsirisConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC65AC9F2589947000E220CE /* OsirisConstants.swift */; };
+		FC65ACAD2589A98000E220CE /* OsirisSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC65ACAC2589A98000E220CE /* OsirisSettingsViewController.swift */; };
 		FCB038F425809B2F00A268B8 /* OsirisUX.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB038F325809B2F00A268B8 /* OsirisUX.swift */; };
 		FCB039002581BA0A00A268B8 /* CheckVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB038FF2581BA0A00A268B8 /* CheckVersion.swift */; };
 		FCB03B5C2581CF0300A268B8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCB03B5B2581CF0300A268B8 /* Images.xcassets */; };
 		FCB03B722581D04300A268B8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCB03B712581D04300A268B8 /* Images.xcassets */; };
 		FCD0225125834CDF00416792 /* OsirisBottomToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD0225025834CDF00416792 /* OsirisBottomToolbarView.swift */; };
+		FCD023F225885F9800416792 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FCD023F125885F9800416792 /* GoogleService-Info.plist */; };
 		FCFABC8F257DD79600C5DE92 /* OsirisFavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFABC8E257DD79600C5DE92 /* OsirisFavoritesViewController.swift */; };
 		FCFABCC5257E184B00C5DE92 /* OsirisNewTabPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFABCC4257E184B00C5DE92 /* OsirisNewTabPageViewController.swift */; };
 /* End PBXBuildFile section */
@@ -2784,6 +2787,8 @@
 		FC54E5032579DB88005F6E42 /* OsirisBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OsirisBrowserViewController.swift; sourceTree = "<group>"; };
 		FC54E510257A083C005F6E42 /* OsirisTabLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OsirisTabLocationView.swift; sourceTree = "<group>"; };
 		FC54E526257A1C99005F6E42 /* OsirisTopToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OsirisTopToolbarView.swift; sourceTree = "<group>"; };
+		FC65AC9F2589947000E220CE /* OsirisConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OsirisConstants.swift; sourceTree = "<group>"; };
+		FC65ACAC2589A98000E220CE /* OsirisSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OsirisSettingsViewController.swift; sourceTree = "<group>"; };
 		FCB038F325809B2F00A268B8 /* OsirisUX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OsirisUX.swift; sourceTree = "<group>"; };
 		FCB038FF2581BA0A00A268B8 /* CheckVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckVersion.swift; sourceTree = "<group>"; };
 		FCB039572581C56600A268B8 /* OsirisRelease.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = OsirisRelease.xcconfig; sourceTree = "<group>"; };
@@ -2791,6 +2796,7 @@
 		FCB03B712581D04300A268B8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FCC756EA2578979D006479F9 /* OsirisDebug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = OsirisDebug.xcconfig; sourceTree = "<group>"; };
 		FCD0225025834CDF00416792 /* OsirisBottomToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OsirisBottomToolbarView.swift; sourceTree = "<group>"; };
+		FCD023F125885F9800416792 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FCFABC8E257DD79600C5DE92 /* OsirisFavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OsirisFavoritesViewController.swift; sourceTree = "<group>"; };
 		FCFABCC4257E184B00C5DE92 /* OsirisNewTabPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OsirisNewTabPageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -3301,6 +3307,13 @@
 				D8C75DF2207584C300BB8AD0 /* UIImageViewAligned.m */,
 			);
 			path = UIImageViewAligned;
+			sourceTree = "<group>";
+		};
+		1FAAC24D2085E36CE36BC15E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		2711D99224E444E200E3844B /* DateTools */ = {
@@ -4141,6 +4154,7 @@
 		2F44FC551A9E83E200FD20CC /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				FC65ACAB2589A96900E220CE /* OsirisSettings */,
 				2746D26C24A291ED00E38852 /* Rewards Internals */,
 				0B62EFD11AD63CD100ACB9CD /* Clearables.swift */,
 				2F44FCCA1A9E972E00FD20CC /* SearchEnginePicker.swift */,
@@ -5400,6 +5414,7 @@
 				2FCAE22A1ABB51F800877008 /* StorageTests */,
 				5DE7689220B3456E00FF5533 /* BraveSharedTests */,
 				28CE83EF1A1D246900576538 /* ThirdParty */,
+				1FAAC24D2085E36CE36BC15E /* Pods */,
 			);
 			indentWidth = 4;
 			sourceTree = "<group>";
@@ -5643,11 +5658,21 @@
 			path = OsirisToolbarView;
 			sourceTree = "<group>";
 		};
+		FC65ACAB2589A96900E220CE /* OsirisSettings */ = {
+			isa = PBXGroup;
+			children = (
+				FC65ACAC2589A98000E220CE /* OsirisSettingsViewController.swift */,
+			);
+			path = OsirisSettings;
+			sourceTree = "<group>";
+		};
 		FCB038F225809B1800A268B8 /* OsirisShared */ = {
 			isa = PBXGroup;
 			children = (
+				FCD023F125885F9800416792 /* GoogleService-Info.plist */,
 				FCB038F325809B2F00A268B8 /* OsirisUX.swift */,
 				FCB038FF2581BA0A00A268B8 /* CheckVersion.swift */,
+				FC65AC9F2589947000E220CE /* OsirisConstants.swift */,
 			);
 			path = OsirisShared;
 			sourceTree = "<group>";
@@ -6461,6 +6486,7 @@
 				E4B7B7781A793CF20022C5E0 /* FiraSans-Italic.ttf in Resources */,
 				5D53749D23846FFC00A2B587 /* dc-cavalleri.jpg in Resources */,
 				5EC1DDBD2356888000CA4028 /* onboarding-rewards.json in Resources */,
+				FCD023F225885F9800416792 /* GoogleService-Info.plist in Resources */,
 				0BA1E00E1B03FB0B007675AF /* NetError.html in Resources */,
 				5DE5250E218CE92C000DFAA6 /* block-images.json in Resources */,
 				5D5374A823846FFC00A2B587 /* annie-spratt.jpg in Resources */,
@@ -7068,6 +7094,7 @@
 				0A8ABE19247435E30062DA81 /* BraveVPNCommonUI.swift in Sources */,
 				A13AC72520EC12360040D4BB /* Migration.swift in Sources */,
 				27201EFC24535C2F00C19DD1 /* NewTabPageFlowLayout.swift in Sources */,
+				FC65ACAD2589A98000E220CE /* OsirisSettingsViewController.swift in Sources */,
 				27FD2CAB2146C31C00A5A779 /* RequestDesktopSiteActivity.swift in Sources */,
 				3BCE6D3C1CEB9E4D0080928C /* ThirdPartySearchAlerts.swift in Sources */,
 				4422D55A21BFFB7F00BF1855 /* regexp.cc in Sources */,
@@ -7414,6 +7441,7 @@
 				4422D4F721BFFB7600BF1855 /* dbformat.cc in Sources */,
 				7B844E3D1BBDDB9D00E733A2 /* ChevronView.swift in Sources */,
 				44331DD222551AFE007E3E93 /* ToolbarButton.swift in Sources */,
+				FC65ACA02589947000E220CE /* OsirisConstants.swift in Sources */,
 				0A39FE942486604D00290ABC /* GRDServerManager.m in Sources */,
 				44331DBB22521013007E3E93 /* MenuViewController.swift in Sources */,
 				4422D4BC21BFFB7600BF1855 /* testharness.cc in Sources */,
@@ -9003,7 +9031,7 @@
 				CODE_SIGN_ENTITLEMENTS = "$(SRCROOT)/Client/Entitlements/Enterprise.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.2.3.4;
+				CURRENT_PROJECT_VERSION = 1.0;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -9027,6 +9055,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2.0;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lxml2",
@@ -9832,7 +9861,7 @@
 				CODE_SIGN_ENTITLEMENTS = "$(SRCROOT)/Client/Entitlements/Release.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.2.3.4;
+				CURRENT_PROJECT_VERSION = 1.0;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				ENABLE_TESTABILITY = YES;
@@ -9857,6 +9886,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -12124,7 +12154,7 @@
 				CODE_SIGN_ENTITLEMENTS = "$(SRCROOT)/Client/Entitlements/Release (AppStore).entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.2.3.4;
+				CURRENT_PROJECT_VERSION = 1.0;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				ENABLE_TESTABILITY = YES;
@@ -12149,6 +12179,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2.0;
 				MOZ_BUNDLE_DISPLAY_NAME = Brave;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
@@ -12360,7 +12391,7 @@
 				CODE_SIGN_ENTITLEMENTS = "$(SRCROOT)/Client/Entitlements/Dev.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.2.3.4;
+				CURRENT_PROJECT_VERSION = 1.0;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -12384,6 +12415,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2.0;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lxml2",
@@ -12659,7 +12691,7 @@
 				CODE_SIGN_ENTITLEMENTS = "$(SRCROOT)/Client/Entitlements/Beta.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.2.3.4;
+				CURRENT_PROJECT_VERSION = 1.0;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				ENABLE_TESTABILITY = YES;
@@ -12684,6 +12716,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -12912,7 +12945,7 @@
 				CODE_SIGN_ENTITLEMENTS = "$(SRCROOT)/Client/Entitlements/Debug.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.2.3.4;
+				CURRENT_PROJECT_VERSION = 1.0;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -12936,6 +12969,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2.0;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lxml2",
@@ -13082,7 +13116,7 @@
 				CODE_SIGN_ENTITLEMENTS = "$(SRCROOT)/Client/Entitlements/Release (AppStore).entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.2.3.4;
+				CURRENT_PROJECT_VERSION = 1.0;
 				DEVELOPMENT_TEAM = 2KXHQNX2M6;
 				ENABLE_BITCODE = NO;
 				ENABLE_TESTABILITY = YES;
@@ -13107,6 +13141,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -13908,7 +13943,7 @@
 				CODE_SIGN_ENTITLEMENTS = "$(SRCROOT)/Client/Entitlements/Debug.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.2.3.4;
+				CURRENT_PROJECT_VERSION = 1.0;
 				DEVELOPMENT_TEAM = 2KXHQNX2M6;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -13932,6 +13967,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2.0;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lxml2",

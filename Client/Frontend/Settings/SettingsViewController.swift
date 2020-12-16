@@ -84,21 +84,20 @@ class SettingsViewController: TableViewController {
         navigationItem.title = Strings.settings
         tableView.accessibilityIdentifier = "SettingsViewController.tableView"
         dataSource.sections = sections
-        
         tableView.separatorInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 0)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         applyTheme(theme)
-        
-        guard let vpnRow = vpnRow else { return }
-        // This is a dynamic cell that must be updated based on vpn status.
-        if let indexPath = dataSource.indexPath(rowUUID: vpnRow.uuid, sectionUUID: featuresSection.uuid) {
-            let newVPNRow = vpnSettingsRow()
-            self.vpnRow = newVPNRow
-            dataSource.sections[indexPath.section].rows.remove(at: indexPath.row)
-            dataSource.sections[indexPath.section].rows.insert(newVPNRow, at: indexPath.row)
-        }
+//
+//        guard let vpnRow = vpnRow else { return }
+//        // This is a dynamic cell that must be updated based on vpn status.
+//        if let indexPath = dataSource.indexPath(rowUUID: vpnRow.uuid, sectionUUID: featuresSection.uuid) {
+//            let newVPNRow = vpnSettingsRow()
+//            self.vpnRow = newVPNRow
+//            dataSource.sections[indexPath.section].rows.remove(at: indexPath.row)
+//            dataSource.sections[indexPath.section].rows.insert(newVPNRow, at: indexPath.row)
+//        }
     }
     
     private func displayRewardsDebugMenu() {
@@ -111,14 +110,14 @@ class SettingsViewController: TableViewController {
         Theme.of(tabManager.selectedTab)
     }
     
-    private var sections: [Section] {
+    var sections: [Section] {
         var list = [
-            featuresSection,
             generalSection,
-            displaySection,
-            securitySection,
-            supportSection,
-            aboutSection
+//            featuresSection,
+//            displaySection,
+//            securitySection,
+//            supportSection,
+//            aboutSection
         ]
         
         let shouldShowVPNSection = { () -> Bool in
@@ -138,9 +137,9 @@ class SettingsViewController: TableViewController {
             list.insert(enableBraveVPNSection, at: 0)
         }
         
-        if let debugSection = debugSection {
-            list.append(debugSection)
-        }
+//        if let debugSection = debugSection {
+//            list.append(debugSection)
+//        }
 
         return list
     }
@@ -179,36 +178,36 @@ class SettingsViewController: TableViewController {
             ]
         )
         
-        if BraveRewards.isAvailable, let rewards = rewards {
-            section.rows += [
-                Row(text: Strings.braveRewardsTitle, selection: { [unowned self] in
-                    let rewardsVC = BraveRewardsSettingsViewController(rewards, legacyWallet: self.legacyWallet)
-                    rewardsVC.walletTransferLearnMoreTapped = { [weak self] in
-                        guard let self = self else { return }
-                        self.dismiss(animated: true) {
-                            self.presentingViewController?.dismiss(animated: true) {
-                                self.settingsDelegate?.settingsOpenURLInNewTab(BraveUX.braveRewardsLearnMoreURL)
-                            }
-                        }
-                    }
-                    self.navigationController?.pushViewController(rewardsVC, animated: true)
-                }, image: #imageLiteral(resourceName: "settings-brave-rewards"), accessory: .disclosureIndicator),
-            ]
-        }
-        
-        #if !NO_BRAVE_TODAY
-        section.rows.append(
-            Row(text: Strings.BraveToday.braveToday, selection: {
-                let todaySettings = BraveTodaySettingsViewController(dataSource: self.feedDataSource)
-                self.navigationController?.pushViewController(todaySettings, animated: true)
-            }, image: #imageLiteral(resourceName: "settings-brave-today").template, accessory: .disclosureIndicator)
-        )
-        #endif
-         
-        vpnRow = vpnSettingsRow()
-        if let vpnRow = vpnRow {
-            section.rows.append(vpnRow)
-        }
+//        if BraveRewards.isAvailable, let rewards = rewards {
+//            section.rows += [
+//                Row(text: Strings.braveRewardsTitle, selection: { [unowned self] in
+//                    let rewardsVC = BraveRewardsSettingsViewController(rewards, legacyWallet: self.legacyWallet)
+//                    rewardsVC.walletTransferLearnMoreTapped = { [weak self] in
+//                        guard let self = self else { return }
+//                        self.dismiss(animated: true) {
+//                            self.presentingViewController?.dismiss(animated: true) {
+//                                self.settingsDelegate?.settingsOpenURLInNewTab(BraveUX.braveRewardsLearnMoreURL)
+//                            }
+//                        }
+//                    }
+//                    self.navigationController?.pushViewController(rewardsVC, animated: true)
+//                }, image: #imageLiteral(resourceName: "settings-brave-rewards"), accessory: .disclosureIndicator),
+//            ]
+//        }
+//
+//        #if !NO_BRAVE_TODAY
+//        section.rows.append(
+//            Row(text: Strings.BraveToday.braveToday, selection: {
+//                let todaySettings = BraveTodaySettingsViewController(dataSource: self.feedDataSource)
+//                self.navigationController?.pushViewController(todaySettings, animated: true)
+//            }, image: #imageLiteral(resourceName: "settings-brave-today").template, accessory: .disclosureIndicator)
+//        )
+//        #endif
+//
+//        vpnRow = vpnSettingsRow()
+//        if let vpnRow = vpnRow {
+//            section.rows.append(vpnRow)
+//        }
         
         return section
     }()
@@ -223,18 +222,18 @@ class SettingsViewController: TableViewController {
                     viewController.profile = self.profile
                     self.navigationController?.pushViewController(viewController, animated: true)
                 }, image: #imageLiteral(resourceName: "settings-search").template, accessory: .disclosureIndicator, cellClass: MultilineValue1Cell.self),
-                Row(text: Strings.sync, selection: { [unowned self] in
-                    if BraveSyncAPI.shared.isInSyncGroup {
-                        self.navigationController?
-                            .pushViewController(SyncSettingsTableViewController(style: .grouped), animated: true)
-                    } else {
-                        self.navigationController?.pushViewController(SyncWelcomeViewController(), animated: true)
-                    }
-                    }, image: #imageLiteral(resourceName: "settings-sync").template, accessory: .disclosureIndicator,
-                       cellClass: MultilineValue1Cell.self)
+//                Row(text: Strings.sync, selection: { [unowned self] in
+//                    if BraveSyncAPI.shared.isInSyncGroup {
+//                        self.navigationController?
+//                            .pushViewController(SyncSettingsTableViewController(style: .grouped), animated: true)
+//                    } else {
+//                        self.navigationController?.pushViewController(SyncWelcomeViewController(), animated: true)
+//                    }
+//                    }, image: #imageLiteral(resourceName: "settings-sync").template, accessory: .disclosureIndicator,
+//                       cellClass: MultilineValue1Cell.self)
             ]
         )
-        
+
         if #available(iOS 13.0, *), UIDevice.isIpad {
             general.rows.append(
                 .boolRow(title: Strings.alwaysRequestDesktopSite,
@@ -403,7 +402,7 @@ class SettingsViewController: TableViewController {
                     cellClass: MultilineValue1Cell.self),
                 Row(text: Strings.rateBrave,
                     selection: { [unowned self] in
-                        // Rate Brave
+                        // Rate Osiris
                         guard let writeReviewURL = URL(string: "https://itunes.apple.com/app/id1052879175?action=write-review")
                             else { return }
                         UIApplication.shared.open(writeReviewURL)
@@ -525,8 +524,12 @@ class SettingsViewController: TableViewController {
 extension TableViewController: Themeable {
     func applyTheme(_ theme: Theme) {
         styleChildren(theme: theme)
+        UITableViewHeaderFooterView.appearance().backgroundColor = .yellow
+//        tableView.visibleCells.forEach {
+//          $0.backgroundColor = .clear
+//        }
         tableView.reloadData()
-
+        
         //  View manipulations done via `apperance()` do not impact existing UI, so need to adjust manually
         // exiting menus, so setting explicitly.
         navigationController?.navigationBar.tintColor = UINavigationBar.appearance().tintColor

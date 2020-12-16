@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>242218544036-js8bdq07c4j0c70pml5kg1ae5v2tflml.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.242218544036-js8bdq07c4j0c70pml5kg1ae5v2tflml</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBtmQ012tBtunLlRB_OUFyYELNbw53DEB8</string>
+	<key>GCM_SENDER_ID</key>
+	<string>242218544036</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>decenternet.osiris-2.ios.OsirisDebug</string>
+	<key>PROJECT_ID</key>
+	<string>osirisdebug</string>
+	<key>STORAGE_BUCKET</key>
+	<string>osirisdebug.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:242218544036:ios:be13c4ca5cc0f33e006f31</string>
+</dict>
+</plist>

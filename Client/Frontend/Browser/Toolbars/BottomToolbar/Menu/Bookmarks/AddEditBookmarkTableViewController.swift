@@ -216,6 +216,7 @@ class AddEditBookmarkTableViewController: UITableViewController {
         }
         
         tableView.reloadData()
+        tableView.backgroundColor = UIColor.yellow
     }
     
     // MARK: - Saving data
@@ -382,6 +383,7 @@ class AddEditBookmarkTableViewController: UITableViewController {
                 let cell = IndentedImageTableViewCell(image: #imageLiteral(resourceName: "menu_folder"))
                 cell.folderName.text = folder.displayTitle
                 cell.tag = folderCellTag
+                cell.backgroundColor = .systemPurple
                 return cell
             }
         case .folderHierarchy:

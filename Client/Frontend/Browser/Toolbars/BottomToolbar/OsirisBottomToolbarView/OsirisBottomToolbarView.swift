@@ -19,7 +19,7 @@ class OsirisBottomToolbarView: BottomToolbarView {
         
         super.init(frame: frame)
         contentView = UIStackView()
-        actionButtons = [backButton, forwardButton, addTabButton, searchButton, tabsButton, menuButton]
+        actionButtons = [backButton, forwardButton, tabsButton, addTabButton, searchButton, menuButton]
         setupAccessibility()
 
         addSubview(contentView)

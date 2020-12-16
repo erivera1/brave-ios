@@ -99,11 +99,13 @@ class MenuViewController: UITableViewController {
     }
     
     private enum MenuButtons: Int, CaseIterable {
-        case vpn, settings, history, bookmarks, downloads, add, share
+//        case vpn, settings, history, bookmarks, downloads, add, share
+        case  osiris, add, bookmarks, history, downloads, share, settings
         
         var title: String {
             switch self {
-            case .vpn: return Strings.VPN.vpnMenuItemTitle
+//            case .vpn: return Strings.VPN.vpnMenuItemTitle
+            case .osiris: return "Osiris"
             case .bookmarks: return Strings.bookmarksMenuItem
             case .history: return Strings.historyMenuItem
             case .settings: return Strings.settingsMenuItem
@@ -115,7 +117,8 @@ class MenuViewController: UITableViewController {
         
         var icon: UIImage {
             switch self {
-            case .vpn: return #imageLiteral(resourceName: "vpn_menu_icon").template
+//            case .vpn: return #imageLiteral(resourceName: "vpn_menu_icon").template
+            case .osiris: return #imageLiteral(resourceName: "Osiris_Logo_Hexagram")
             case .bookmarks: return #imageLiteral(resourceName: "menu_bookmarks").template
             case .history: return #imageLiteral(resourceName: "menu-history").template
             case .settings: return #imageLiteral(resourceName: "menu-settings").template
@@ -209,15 +212,18 @@ class MenuViewController: UITableViewController {
         }
         
         switch button {
-        case .vpn:
-            guard let menuCell = cell as? MenuCell else { return }
-            openVPNAction(menuCell: menuCell)
+//        case .vpn:
+//            guard let menuCell = cell as? MenuCell else { return }
+//            openVPNAction(menuCell: menuCell)
+//        case .osiris:
         case .bookmarks: openBookmarks()
         case .history: openHistory()
         case .settings: openSettings()
         case .add: openAddBookmark()
         case .share: openShareSheet()
         case .downloads: openDownloads()
+        case .osiris:
+            break
         }
     }
     
@@ -228,29 +234,30 @@ class MenuViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let button = visibleButtons[indexPath.row]
         let cell = { () -> MenuCell in
-            guard let button = MenuButtons(rawValue: indexPath.row) else {
-                assertionFailure("No cell with \(indexPath.row) tag.")
-                return MenuCell()
-            }
+//            guard let button = MenuButtons(rawValue: indexPath.row) else {
+//                assertionFailure("No cell with \(indexPath.row) tag.")
+//                return MenuCell()
+//            }
             
-            switch button {
-            case .vpn:
-                let menuCell =  MenuCell(withToggle: true, fullLineSeparator: true)
-                
-                switch BraveVPN.vpnState {
-                case .notPurchased, .purchased, .expired:
-                    break
-                case .installed(let enabled):
-                    menuCell.toggleButton.isOn = enabled
-                    menuCell.isLoading = BraveVPN.reconnectPending
-                }
-                
-                vpnMenuCell = menuCell
-                
-                return menuCell
-            default:
-                return MenuCell()
-            }
+//            switch button {
+//            case .vpn:
+//                let menuCell =  MenuCell(withToggle: true, fullLineSeparator: true)
+//
+//                switch BraveVPN.vpnState {
+//                case .notPurchased, .purchased, .expired:
+//                    break
+//                case .installed(let enabled):
+//                    menuCell.toggleButton.isOn = enabled
+//                    menuCell.isLoading = BraveVPN.reconnectPending
+//                }
+//
+//                vpnMenuCell = menuCell
+//
+//                return menuCell
+//            default:
+//                return MenuCell()
+//            }
+            return MenuCell()
         }()
         
         cell.labelView.text = button.title
@@ -261,7 +268,11 @@ class MenuViewController: UITableViewController {
         cell.labelView.textColor = homeColor
         cell.tag = button.rawValue
         cell.backgroundColor = .clear
-        
+        cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        if indexPath.row > 0 && indexPath.row < visibleButtons.count - 2 {
+            // if you want to hide the separator then
+            cell.separatorInset = UIEdgeInsets(top: 0, left: UIScreen.main.bounds.width, bottom: 0, right: 0)
+        }
         return cell
     }
     
@@ -376,7 +387,7 @@ class MenuViewController: UITableViewController {
     }
     
     private func openSettings() {
-        let vc = SettingsViewController(profile: bvc.profile, tabManager: bvc.tabManager, feedDataSource: bvc.feedDataSource, rewards: bvc.rewards, legacyWallet: bvc.legacyWallet)
+        let vc = OsirisSettingsViewController(profile: bvc.profile, tabManager: bvc.tabManager, feedDataSource: bvc.feedDataSource, rewards: bvc.rewards, legacyWallet: bvc.legacyWallet)
         vc.settingsDelegate = bvc
         open(vc, doneButton: DoneButton(style: .done, position: .right),
              allowSwipeToDismiss: false)

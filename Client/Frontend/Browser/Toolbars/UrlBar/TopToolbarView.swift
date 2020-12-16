@@ -114,7 +114,6 @@ class TopToolbarView: UIView, ToolbarProtocol {
     lazy var locationContainer: UIView = {
         let locationContainer = LocationContainerView()
         locationContainer.translatesAutoresizingMaskIntoConstraints = false
-        locationContainer.backgroundColor = .clear
         return locationContainer
     }()
     

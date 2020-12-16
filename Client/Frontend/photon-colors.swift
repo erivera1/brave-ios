@@ -87,7 +87,7 @@ extension UIColor {
         static let ink80 = UIColor(rgb: 0x202340)
         static let ink90 = UIColor(rgb: 0x0f1126)
 
-        static let white100 = UIColor(rgb: 0xffffff)
+        static let white100 = UIColor(rgb: 0x0f1126)
 
     }
 }

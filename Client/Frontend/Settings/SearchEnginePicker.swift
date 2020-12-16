@@ -45,7 +45,8 @@ class SearchEnginePicker: UITableViewController {
         cell.imageView?.image = engine.image.createScaled(CGSize(width: OpenSearchEngine.preferredIconSize,
                                                                  height: OpenSearchEngine.preferredIconSize))
         if engine.shortName == selectedSearchEngineName {
-            cell.accessoryType = .checkmark
+//            cell.accessoryType = .checkmark
+            cell.backgroundColor = OsirisUX.osirisLightBlue
         }
         return cell
     }

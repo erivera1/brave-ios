@@ -16,6 +16,7 @@ import BraveShared
 import Data
 import StoreKit
 import BraveRewards
+//import Firebase
 
 private let log = Logger.browserLogger
 
@@ -325,6 +326,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UIViewControllerRestorati
         
         AdblockResourceDownloader.shared.startLoading()
       
+//        FirebaseApp.configure()
+        
         return shouldPerformAdditionalDelegateHandling
     }
     

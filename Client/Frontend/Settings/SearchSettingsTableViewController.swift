@@ -15,7 +15,7 @@ class SearchSettingsTableViewController: UITableViewController {
     fileprivate let ItemDefaultEngine = 0
     fileprivate let ItemDefaultPrivateEngine = 1
     fileprivate let ItemDefaultSuggestions = 2
-    fileprivate let NumberOfItemsInSectionDefault = 3
+    fileprivate let NumberOfItemsInSectionDefault = 1//3
     fileprivate let SectionOrder = 1
     fileprivate let NumberOfSections = 2
     fileprivate let IconSize = CGSize(width: OpenSearchEngine.preferredIconSize, height: OpenSearchEngine.preferredIconSize)
@@ -83,6 +83,9 @@ class SearchSettingsTableViewController: UITableViewController {
             
             let toggle = UISwitch()
             // This is an easy way to get from the toggle control to the corresponding index.
+            toggle.onTintColor = .red
+            toggle.tintColor = .red
+            toggle.subviews[0].subviews[0].backgroundColor = .red
             toggle.tag = index
             toggle.addTarget(self, action: #selector(didToggleEngine), for: .valueChanged)
             toggle.isOn = model.isEngineEnabled(engine)
@@ -263,8 +266,10 @@ extension SearchSettingsTableViewController {
         let engine = model.orderedEngines[toggle.tag] // The tag is 1-based.
         if toggle.isOn {
             model.enableEngine(engine)
+            toggle.set(offTint: .green)
         } else {
             model.disableEngine(engine)
+            toggle.set(offTint: .red)
         }
     }
 
@@ -291,5 +296,15 @@ extension SearchSettingsTableViewController: SearchEnginePickerDelegate {
             self.tableView.reloadData()
         }
         _ = navigationController?.popViewController(animated: true)
+    }
+}
+
+extension UISwitch {
+
+    func set(offTint color: UIColor ) {
+        let minSide = min(bounds.size.height, bounds.size.width)
+        layer.cornerRadius = minSide / 2
+        backgroundColor = color
+        tintColor = color
     }
 }

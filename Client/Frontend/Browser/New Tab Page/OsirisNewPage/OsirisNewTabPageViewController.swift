@@ -10,14 +10,13 @@ class OsirisNewTabPageViewController: NewTabPageViewController {
     private let backgroundImageView = UIImageView()
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.systemPink
         view.addSubview(backgroundImageView)
-        view.backgroundColor = UIColor.white
+        
         backgroundImageView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
         self.view.sendSubviewToBack(backgroundImageView)
-        backgroundImageView.image = UIImage(named: "Osiris_New_Screen_Background")
+        backgroundImageView.image = UIImage(named: OsirisConstants.backGroundImage)
     }
 
 }

@@ -298,7 +298,7 @@ class TabTrayController: UIViewController, Themeable {
     // MARK: View Controller Callbacks
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         view.accessibilityLabel = Strings.tabTrayAccessibilityLabel
         
         collectionView = UICollectionView(frame: view.frame, collectionViewLayout: UICollectionViewFlowLayout())
@@ -316,7 +316,7 @@ class TabTrayController: UIViewController, Themeable {
         view.addSubview(toolbar)
         
         updatePrivateModeButtonVisibility()
-
+        toolbar.privateModeButton.isHidden = true
         makeConstraints()
 
         view.insertSubview(emptyPrivateTabsView, aboveSubview: collectionView)
@@ -1193,8 +1193,9 @@ class TrayToolbar: UIView, Themeable {
             make.centerY.equalTo(safeArea.centerY)
             make.trailing.equalTo(self).offset(-sideOffset)
         }
-
+    
         addSubview(privateModeButton)
+        
         privateModeButton.snp.makeConstraints { make in
             make.centerY.equalTo(safeArea.centerY)
             make.leading.equalTo(self).offset(sideOffset)

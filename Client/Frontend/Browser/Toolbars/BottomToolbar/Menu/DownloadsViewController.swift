@@ -84,13 +84,22 @@ class DownloadsPanel: UIViewController, UITableViewDelegate, UITableViewDataSour
             make.edges.equalTo(self.view)
             return
         }
-        
+        let backgroundImageView = UIImageView()
+        view.addSubview(backgroundImageView)
+        view.backgroundColor = UIColor.white
+        backgroundImageView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
+        self.view.addSubview(backgroundImageView)
+//        self.view.sendSubviewToBack(backgroundImageView)
+        backgroundImageView.image = UIImage(named: OsirisConstants.backGroundImage)
+
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(TwoLineTableViewCell.self, forCellReuseIdentifier: "TwoLineTableViewCell")
         tableView.layoutMargins = .zero
         tableView.keyboardDismissMode = .onDrag
-        tableView.backgroundColor = UIColor.Photon.white100
+        tableView.backgroundColor = UIColor.clear
         tableView.separatorColor = UIColor.Photon.grey30
         tableView.accessibilityIdentifier = "DownloadsTable"
         tableView.cellLayoutMarginsFollowReadableWidth = false
@@ -394,9 +403,9 @@ extension DownloadsPanel: Themeable {
         updateEmptyPanelState()
         
         welcomeLabel.appearanceTextColor = theme.colors.tints.home
-        overlayView.appearanceBackgroundColor = theme.colors.home
+        overlayView.appearanceBackgroundColor = .clear//theme.colors.home
         logoImageView.tintColor = theme.colors.tints.home
-        
+        tableView.backgroundColor = .clear
         tableView.reloadData()
     }
 }

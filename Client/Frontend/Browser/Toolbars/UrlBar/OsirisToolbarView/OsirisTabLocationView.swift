@@ -9,26 +9,26 @@ import SnapKit
 import XCGLogger
 import BraveShared
 
-protocol OsirisTabLocationViewDelegate {
-    func tabLocationViewDidTapLocation(_ tabLocationView: OsirisTabLocationView)
-    func tabLocationViewDidLongPressLocation(_ tabLocationView: OsirisTabLocationView)
-    func tabLocationViewDidTapReaderMode(_ tabLocationView: OsirisTabLocationView)
-    func tabLocationViewDidBeginDragInteraction(_ tabLocationView: OsirisTabLocationView)
-    func tabLocationViewDidTapReload(_ tabLocationView: OsirisTabLocationView)
-    func tabLocationViewDidLongPressReload(_ tabLocationView: OsirisTabLocationView, from button: UIButton)
-    func tabLocationViewDidTapStop(_ tabLocationView: OsirisTabLocationView)
-    func tabLocationViewDidTapShieldsButton(_ urlBar: OsirisTabLocationView)
-    func tabLocationViewDidTapRewardsButton(_ urlBar: OsirisTabLocationView)
-    func tabLocationViewDidLongPressRewardsButton(_ urlBar: OsirisTabLocationView)
-    
-    /// - returns: whether the long-press was handled by the delegate; i.e. return `false` when the conditions for even starting handling long-press were not satisfied
-    @discardableResult func tabLocationViewDidLongPressReaderMode(_ tabLocationView: TabLocationView) -> Bool
-    func tabLocationViewLocationAccessibilityActions(_ tabLocationView: TabLocationView) -> [UIAccessibilityCustomAction]?
-}
+//protocol OsirisTabLocationViewDelegate {
+//    func tabLocationViewDidTapLocation(_ tabLocationView: OsirisTabLocationView)
+//    func tabLocationViewDidLongPressLocation(_ tabLocationView: OsirisTabLocationView)
+//    func tabLocationViewDidTapReaderMode(_ tabLocationView: OsirisTabLocationView)
+//    func tabLocationViewDidBeginDragInteraction(_ tabLocationView: OsirisTabLocationView)
+//    func tabLocationViewDidTapReload(_ tabLocationView: OsirisTabLocationView)
+//    func tabLocationViewDidLongPressReload(_ tabLocationView: OsirisTabLocationView, from button: UIButton)
+//    func tabLocationViewDidTapStop(_ tabLocationView: OsirisTabLocationView)
+//    func tabLocationViewDidTapShieldsButton(_ urlBar: OsirisTabLocationView)
+//    func tabLocationViewDidTapRewardsButton(_ urlBar: OsirisTabLocationView)
+//    func tabLocationViewDidLongPressRewardsButton(_ urlBar: OsirisTabLocationView)
+//    
+//    /// - returns: whether the long-press was handled by the delegate; i.e. return `false` when the conditions for even starting handling long-press were not satisfied
+//    @discardableResult func tabLocationViewDidLongPressReaderMode(_ tabLocationView: TabLocationView) -> Bool
+//    func tabLocationViewLocationAccessibilityActions(_ tabLocationView: TabLocationView) -> [UIAccessibilityCustomAction]?
+//}
 
 class OsirisTabLocationView: TabLocationView {
     
-    var delegateOsiris: OsirisTabLocationViewDelegate?
+//    var delegateOsiris: OsirisTabLocationViewDelegate?
     
     private struct TabLocationViewUX {
         static let hostFontColor = UIColor.black
@@ -106,11 +106,10 @@ class OsirisTabLocationView: TabLocationView {
         contentView.insetsLayoutMarginsFromSafeArea = false
         contentView.spacing = 10
         contentView.setCustomSpacing(5, after: urlTextField)
-
         tabOptionsStackView.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 6)
         tabOptionsStackView.isLayoutMarginsRelativeArrangement = true
         addSubview(contentView)
-
+        
         contentView.snp.makeConstraints { make in
             make.leading.trailing.top.bottom.equalTo(self)
         }
@@ -118,7 +117,6 @@ class OsirisTabLocationView: TabLocationView {
         tabOptionsStackView.snp.makeConstraints { make in
             make.top.bottom.equalTo(contentView)
         }
-
         // Setup UIDragInteraction to handle dragging the location
         // bar for dropping its URL into other apps.
         let dragInteraction = UIDragInteraction(delegate: self)

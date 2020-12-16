@@ -10,18 +10,22 @@ class OsirisBrowserViewController: BrowserViewController {
     private let backgroundImageView = UIImageView()
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         view.addSubview(backgroundImageView)
         view.backgroundColor = UIColor.white
         backgroundImageView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
         self.view.sendSubviewToBack(backgroundImageView)
-        backgroundImageView.image = UIImage(named: "Osiris_New_Screen_Background")
-        backgroundImageView.alpha = 0.5
+        backgroundImageView.image = UIImage(named: OsirisConstants.backGroundImage)
         
         // TRUE - the user can choose if he wants to update now or later by calling
         CheckUpdate.shared.showUpdate(withConfirmation: true)
+        updateTabsBarVisibility()
     }
     
+    override func updateTabsBarVisibility() {
+        tabsBar.view.isHidden = true
+    }
 }
 

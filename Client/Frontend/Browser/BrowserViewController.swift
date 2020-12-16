@@ -156,7 +156,7 @@ class BrowserViewController: UIViewController {
         self.readerModeCache = ReaderMode.cache(for: tabManager.selectedTab)
         self.crashedLastSession = crashedLastSession
         self.safeBrowsing = safeBrowsingManager
-
+        
         let configuration: BraveRewardsConfiguration
         if AppConstants.buildChannel.isPublic {
             configuration = .production
@@ -639,6 +639,7 @@ class BrowserViewController: UIViewController {
 
         // Setup the URL bar, wrapped in a view to get transparency effect
         topToolbar = OsirisTopToolbarView()//TopToolbarView()
+        topToolbar.locationContainer.layer.cornerRadius = 15
         topToolbar.translatesAutoresizingMaskIntoConstraints = false
         topToolbar.delegate = self
 //        topToolbar.delegateOsiris = self
