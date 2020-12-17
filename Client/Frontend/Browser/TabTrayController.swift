@@ -351,6 +351,10 @@ class TabTrayController: UIViewController, Themeable {
         } else {
             applyTheme(Theme.of(tabManager.selectedTab))
         }
+        
+        let backgroundImageView = UIImageView()
+        backgroundImageView.image = UIImage(named: OsirisConstants.backGroundImage)
+        collectionView.backgroundView = backgroundImageView
     }
 
     override func viewWillAppear(_ animated: Bool) {

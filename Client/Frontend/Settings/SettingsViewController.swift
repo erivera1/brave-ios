@@ -85,6 +85,10 @@ class SettingsViewController: TableViewController {
         tableView.accessibilityIdentifier = "SettingsViewController.tableView"
         dataSource.sections = sections
         tableView.separatorInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 0)
+        
+        let backgroundImageView = UIImageView()
+        backgroundImageView.image = UIImage(named: OsirisConstants.backGroundImage)
+        self.tableView.backgroundView = backgroundImageView
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -523,11 +527,11 @@ class SettingsViewController: TableViewController {
 
 extension TableViewController: Themeable {
     func applyTheme(_ theme: Theme) {
-        styleChildren(theme: theme)
+//        styleChildren(theme: theme)
         UITableViewHeaderFooterView.appearance().backgroundColor = .yellow
-//        tableView.visibleCells.forEach {
-//          $0.backgroundColor = .clear
-//        }
+        tableView.visibleCells.forEach {
+          $0.backgroundColor = .white
+        }
         tableView.reloadData()
         
         //  View manipulations done via `apperance()` do not impact existing UI, so need to adjust manually

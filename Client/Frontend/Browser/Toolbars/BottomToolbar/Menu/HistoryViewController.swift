@@ -44,7 +44,9 @@ class HistoryViewController: SiteTableViewController, ToolbarUrlActionsProtocol 
     super.viewDidLoad()
     self.tableView.accessibilityIdentifier = "History List"
     title = Strings.historyScreenTitle
-    
+    let backgroundImageView = UIImageView()
+    backgroundImageView.image = UIImage(named: OsirisConstants.backGroundImage)
+    self.tableView.backgroundView = backgroundImageView
     reloadData()
   }
   

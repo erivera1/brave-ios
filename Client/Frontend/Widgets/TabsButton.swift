@@ -62,12 +62,14 @@ class TabsButton: UIButton {
         border.strokeWidth = TabsButtonUX.borderStrokeWidth
         border.cornerRadius = TabsButtonUX.cornerRadius
         border.isUserInteractionEnabled = false
+        border.isHidden = true
         return border
     }()
     
     required init(top: Bool) {
         self.top = top
         super.init(frame: .zero)
+        self.setImage(#imageLiteral(resourceName: "Tab"), for: .normal)
         [labelBackground, borderView, countLabel].forEach(insideButton.addSubview)
         addSubview(insideButton)
         isAccessibilityElement = true
@@ -89,6 +91,10 @@ class TabsButton: UIButton {
         insideButton.snp.remakeConstraints { (make) -> Void in
             make.size.equalTo(19)
             make.center.equalTo(self)
+        }
+        countLabel.snp.remakeConstraints { make in
+            make.centerX.equalTo(borderView).offset(7)
+            make.centerY.equalTo(borderView).offset(3)
         }
     }
 

@@ -68,7 +68,7 @@ class TabLocationView: UIView {
                 reloadButton.setImage(#imageLiteral(resourceName: "nav-stop").template, for: .normal)
                 reloadButton.accessibilityLabel = Strings.tabToolbarStopButtonAccessibilityLabel
             } else {
-                reloadButton.setImage(#imageLiteral(resourceName: "nav-refresh").template, for: .normal)
+                reloadButton.setImage(#imageLiteral(resourceName: "Osiris_RoundRefresh").template, for: .normal)
                 reloadButton.accessibilityLabel = Strings.tabToolbarReloadButtonAccessibilityLabel
             }
         }
@@ -170,7 +170,7 @@ class TabLocationView: UIView {
         $0.accessibilityIdentifier = "TabToolbar.stopReloadButton"
         $0.isAccessibilityElement = true
         $0.accessibilityLabel = Strings.tabToolbarReloadButtonAccessibilityLabel
-        $0.setImage(#imageLiteral(resourceName: "nav-refresh").template, for: .normal)
+        $0.setImage(#imageLiteral(resourceName: "Osiris_RoundRefresh").template, for: .normal)
         $0.tintColor = UIColor.Photon.grey30
         let longPressGestureStopReloadButton = UILongPressGestureRecognizer(target: self, action: #selector(didLongPressStopReload(_:)))
         $0.addGestureRecognizer(longPressGestureStopReloadButton)

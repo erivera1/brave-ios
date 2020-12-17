@@ -155,6 +155,10 @@ class AddEditBookmarkTableViewController: UITableViewController {
 
         tableView.rowHeight = UX.cellHeight
         tableView.contentInset = UX.headerTopInset
+        let backgroundImageView = UIImageView()
+        backgroundImageView.image = UIImage(named: OsirisConstants.backGroundImage)
+        self.tableView.backgroundView = backgroundImageView
+        bookmarkDetailsView.backgroundColor = .systemPink
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -416,7 +420,6 @@ class AddEditBookmarkTableViewController: UITableViewController {
             } else if case .rootLevel = saveLocation, indentedFolder.folder.objectID == self.rootFolderId {
                 cell.accessoryType = .checkmark
             }
-            
             return cell
         }
     }

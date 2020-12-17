@@ -23,7 +23,7 @@ class OsirisBottomToolbarView: BottomToolbarView {
         setupAccessibility()
 
         addSubview(contentView)
-        helper = ToolbarHelper(toolbar: self)
+        helper = OsirisToolbarHelper(toolbar: self)
         addButtons(actionButtons)
         contentView.axis = .horizontal
         contentView.distribution = .fillEqually

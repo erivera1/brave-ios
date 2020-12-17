@@ -21,7 +21,7 @@ class BottomToolbarView: UIView, ToolbarProtocol {
     let menuButton = ToolbarButton(top: false)
     var actionButtons: [Themeable & UIButton]
 
-    var helper: ToolbarHelper?
+    var helper: OsirisToolbarHelper?//ToolbarHelper?
     var contentView = UIStackView()
 
     override init(frame: CGRect) {
@@ -30,7 +30,7 @@ class BottomToolbarView: UIView, ToolbarProtocol {
         setupAccessibility()
 
         addSubview(contentView)
-        helper = ToolbarHelper(toolbar: self)
+        helper = OsirisToolbarHelper(toolbar: self)
         addButtons(actionButtons)
         contentView.axis = .horizontal
         contentView.distribution = .fillEqually

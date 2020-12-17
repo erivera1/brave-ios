@@ -30,9 +30,11 @@ class SearchSettingsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let backgroundImageView = UIImageView()
+        backgroundImageView.image = UIImage(named: OsirisConstants.backGroundImage)
+        self.tableView.backgroundView = backgroundImageView
         navigationItem.title = Strings.searchSettingNavTitle
-
+        self.tableView.backgroundColor = .clear
         // To allow re-ordering the list of search engines at all times.
         tableView.isEditing = true
         // So that we push the default search engine controller on selection.
@@ -45,8 +47,8 @@ class SearchSettingsTableViewController: UITableViewController {
             self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: Strings.settingsSearchDoneButton, style: .done, target: self, action: #selector(self.dismissAnimated))
         }
 
-        let footer = SettingsTableSectionHeaderFooterView(frame: CGRect(width: tableView.bounds.width, height: 44))
-        tableView.tableFooterView = footer
+//        let footer = SettingsTableSectionHeaderFooterView(frame: CGRect(width: tableView.bounds.width, height: 44))
+        tableView.tableFooterView = UIView()
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -83,9 +85,6 @@ class SearchSettingsTableViewController: UITableViewController {
             
             let toggle = UISwitch()
             // This is an easy way to get from the toggle control to the corresponding index.
-            toggle.onTintColor = .red
-            toggle.tintColor = .red
-            toggle.subviews[0].subviews[0].backgroundColor = .red
             toggle.tag = index
             toggle.addTarget(self, action: #selector(didToggleEngine), for: .valueChanged)
             toggle.isOn = model.isEngineEnabled(engine)
@@ -99,7 +98,7 @@ class SearchSettingsTableViewController: UITableViewController {
             cell.imageView?.layer.masksToBounds = true
             cell.selectionStyle = .none
         }
-
+        cell.backgroundColor = .white
         // So that the seperator line goes all the way to the left edge.
         cell.separatorInset = .zero
 
@@ -189,6 +188,11 @@ class SearchSettingsTableViewController: UITableViewController {
 
     // Hide a thin vertical line that iOS renders between the accessoryView and the reordering control.
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let imageView = cell.subviews.first(where: { $0.description.contains("Reorder") })?.subviews.first(where: { $0 is UIImageView }) as? UIImageView
+            imageView?.image = UIImage(named: "Osiris_DragUpAndDown")
+            let size = cell.bounds.height * 0.6 // scaled for padding between cells
+            imageView?.frame.size.width = size
+            imageView?.frame.size.height = size
         if cell.isEditing {
             for v in cell.subviews where v.frame.width == 1.0 {
                 v.backgroundColor = UIColor.clear
@@ -208,6 +212,7 @@ class SearchSettingsTableViewController: UITableViewController {
             Strings.currentlyUsedSearchEngines : Strings.quickSearchEngines
         
         headerView.titleLabel.text = sectionTitle
+        headerView.backgroundColor = .yellow
         return headerView
     }
 
@@ -266,10 +271,10 @@ extension SearchSettingsTableViewController {
         let engine = model.orderedEngines[toggle.tag] // The tag is 1-based.
         if toggle.isOn {
             model.enableEngine(engine)
-            toggle.set(offTint: .green)
+//            toggle.set(offTint: .green)
         } else {
             model.disableEngine(engine)
-            toggle.set(offTint: .red)
+//            toggle.set(offTint: .red)
         }
     }
 
@@ -299,12 +304,12 @@ extension SearchSettingsTableViewController: SearchEnginePickerDelegate {
     }
 }
 
-extension UISwitch {
-
-    func set(offTint color: UIColor ) {
-        let minSide = min(bounds.size.height, bounds.size.width)
-        layer.cornerRadius = minSide / 2
-        backgroundColor = color
-        tintColor = color
-    }
-}
+//extension UISwitch {
+//
+//    func set(offTint color: UIColor ) {
+//        let minSide = min(bounds.size.height, bounds.size.width)
+//        layer.cornerRadius = minSide / 2
+//        backgroundColor = color
+//        tintColor = color
+//    }
+//}

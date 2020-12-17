@@ -28,7 +28,10 @@ class SearchEnginePicker: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let backgroundImageView = UIImageView()
+        backgroundImageView.image = UIImage(named: OsirisConstants.backGroundImage)
+        self.tableView.backgroundView = backgroundImageView
+    
         navigationItem.title = Strings.searchEnginePickerNavTitle
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: Strings.cancelButtonTitle, style: .plain, target: self, action: #selector(cancel))
         tableView.tableFooterView = UIView()
@@ -47,6 +50,8 @@ class SearchEnginePicker: UITableViewController {
         if engine.shortName == selectedSearchEngineName {
 //            cell.accessoryType = .checkmark
             cell.backgroundColor = OsirisUX.osirisLightBlue
+        } else {
+            cell.backgroundColor = .white
         }
         return cell
     }

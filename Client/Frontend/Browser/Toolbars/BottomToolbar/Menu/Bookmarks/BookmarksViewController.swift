@@ -79,7 +79,9 @@ class BookmarksViewController: SiteTableViewController, ToolbarUrlActionsProtoco
         super.viewDidLoad()
 
         tableView.allowsSelectionDuringEditing = true
-
+        let backgroundImageView = UIImageView()
+        backgroundImageView.image = UIImage(named: OsirisConstants.backGroundImage)
+        self.tableView.backgroundView = backgroundImageView
         setUpToolbar()
         updateEditBookmarksButtonStatus()
         

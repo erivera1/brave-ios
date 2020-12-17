@@ -44,8 +44,8 @@ extension ShieldsViewController {
             super.init(frame: frame)
             
             stackView.addArrangedSubview(simpleShieldView)
-            stackView.addArrangedSubview(advancedControlsBar)
-            stackView.addArrangedSubview(advancedShieldView)
+//            stackView.addArrangedSubview(advancedControlsBar)
+//            stackView.addArrangedSubview(advancedShieldView)
             
             addSubview(scrollView)
             scrollView.addSubview(stackView)
