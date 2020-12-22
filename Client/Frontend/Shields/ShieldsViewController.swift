@@ -36,7 +36,6 @@ class ShieldsViewController: UIViewController, PopoverContentComponent, Themeabl
         
         tab.contentBlocker.statsDidChange = { [weak self] _ in
             self?.updateShieldBlockStats()
-            self?.updateOsirisShieldBlockStats()
         }
     }
     
@@ -51,7 +50,8 @@ class ShieldsViewController: UIViewController, PopoverContentComponent, Themeabl
     }
     
     private var shieldsUpSwitch: ShieldsSwitch {
-        return shieldsView.simpleShieldView.shieldsSwitch
+//        return shieldsView.simpleShieldView.shieldsSwitch
+        return shieldsView.simpleShieldView.osirisArmorView.shieldsSwitch
     }
     
     // MARK: - State
@@ -86,17 +86,8 @@ class ShieldsViewController: UIViewController, PopoverContentComponent, Themeabl
     }
     
     private func updateShieldBlockStats() {
-        shieldsView.simpleShieldView.blockCountView.countLabel.text = String(
-            tab.contentBlocker.stats.adCount +
-            tab.contentBlocker.stats.trackerCount +
-            tab.contentBlocker.stats.httpsCount +
-            tab.contentBlocker.stats.scriptCount +
-            tab.contentBlocker.stats.fingerprintingCount
-        )
-    }
-    
-    private func updateOsirisShieldBlockStats() {
-        shieldsView.simpleShieldView.adBlockLabel.text = String(
+        //OSIRIS - These line updates the adbslock label when armor is turned on
+        shieldsView.simpleShieldView.osirisArmorView.adBlockLabel.text = String(
             tab.contentBlocker.stats.adCount +
             tab.contentBlocker.stats.trackerCount +
             tab.contentBlocker.stats.httpsCount +
@@ -126,7 +117,7 @@ class ShieldsViewController: UIViewController, PopoverContentComponent, Themeabl
         let isShieldsAvailable = url?.isLocal == false
         // If shields aren't available, we don't show the switch and show the "off" state
         let shieldsEnabled = isShieldsAvailable ? on : false
-        shieldsView.simpleShieldView.setOn(shieldsEnabled, animated: false)
+        
         if animated {
             var partOneViews: [UIView]
             var partTwoViews: [UIView]
@@ -140,7 +131,6 @@ class ShieldsViewController: UIViewController, PopoverContentComponent, Themeabl
                 if advancedControlsShowing {
                     partTwoViews.append(self.shieldsView.advancedShieldView)
                 }
-                updateOsirisShieldBlockStats()
             } else {
                 partOneViews = [
                     self.shieldsView.simpleShieldView.blockCountView,
@@ -153,37 +143,30 @@ class ShieldsViewController: UIViewController, PopoverContentComponent, Themeabl
                 partTwoViews = [self.shieldsView.simpleShieldView.shieldsDownStackView]
             }
             // Step 1, hide
-//            UIView.animate(withDuration: 0.1, animations: {
-//                partOneViews.forEach { $0.alpha = 0.0 }
-//            }, completion: { _ in
-//                partOneViews.forEach {
-//                    $0.alpha = 1.0
-//                    $0.isHidden = true
-//                }
-//                partTwoViews.forEach {
-//                    $0.alpha = 0.0
-//                    $0.isHidden = false
-//                }
-//                UIView.animate(withDuration: 0.15, animations: {
-//                    partTwoViews.forEach { $0.alpha = 1.0 }
-//                })
-//
-//                self.updatePreferredContentSize()
-//            })
-           
-           
+            UIView.animate(withDuration: 0.1, animations: {
+                partOneViews.forEach { $0.alpha = 0.0 }
+            }, completion: { _ in
+                partOneViews.forEach {
+                    $0.alpha = 1.0
+                    $0.isHidden = true
+                }
+                partTwoViews.forEach {
+                    $0.alpha = 0.0
+                    $0.isHidden = false
+                }
+                UIView.animate(withDuration: 0.15, animations: {
+                    partTwoViews.forEach { $0.alpha = 1.0 }
+                })
+
+                self.updatePreferredContentSize()
+            })
             
         } else {
-//            shieldsView.simpleShieldView.armorImageView.image =
-//            shieldsView.simpleShieldView.blockCountView.isHidden = !shieldsEnabled
-//            shieldsView.simpleShieldView.footerLabel.isHidden = !shieldsEnabled
-//            shieldsView.simpleShieldView.shieldsDownStackView.isHidden = shieldsEnabled
-//            shieldsView.advancedControlsBar.isHidden = !shieldsEnabled
+            shieldsView.simpleShieldView.blockCountView.isHidden = !shieldsEnabled
+            shieldsView.simpleShieldView.footerLabel.isHidden = !shieldsEnabled
+            shieldsView.simpleShieldView.shieldsDownStackView.isHidden = shieldsEnabled
+            shieldsView.advancedControlsBar.isHidden = !shieldsEnabled
             
-//            DispatchQueue.main.async {
-//                self.shieldsView.simpleShieldView.armorImageView.image = UIImage(named: "armor_inactive")
-//                self.shieldsView.simpleShieldView.adBlockLabel.text = "0"
-//            }
             updatePreferredContentSize()
         }
     }
@@ -257,9 +240,6 @@ class ShieldsViewController: UIViewController, PopoverContentComponent, Themeabl
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        shieldsView.simpleShieldView.adBlockLabel.text = "5"
-//        shieldsView.simpleShieldView.buttonTest.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
-//        
         if let url = url {
             shieldsView.simpleShieldView.faviconImageView.loadFavicon(for: url)
         } else {
@@ -268,7 +248,7 @@ class ShieldsViewController: UIViewController, PopoverContentComponent, Themeabl
         
         shieldsView.simpleShieldView.hostLabel.text = url?.normalizedHost()
         shieldsView.reportBrokenSiteView.urlLabel.text = url?.domainURL.absoluteString
-        shieldsView.simpleShieldView.shieldsSwitch.addTarget(self, action: #selector(shieldsOverrideSwitchValueChanged), for: .valueChanged)
+//        shieldsView.simpleShieldView.shieldsSwitch.addTarget(self, action: #selector(shieldsOverrideSwitchValueChanged), for: .valueChanged)
         shieldsView.advancedShieldView.siteTitle.titleLabel.text = url?.normalizedHost()?.uppercased()
         shieldsView.advancedShieldView.globalControlsButton.addTarget(self, action: #selector(tappedGlobalShieldsButton), for: .touchUpInside)
 
@@ -279,8 +259,7 @@ class ShieldsViewController: UIViewController, PopoverContentComponent, Themeabl
         shieldsView.reportBrokenSiteView.cancelButton.addTarget(self, action: #selector(tappedCancelReportingButton), for: .touchUpInside)
         shieldsView.reportBrokenSiteView.submitButton.addTarget(self, action: #selector(tappedSubmitReportingButton), for: .touchUpInside)
 
-//        updateShieldBlockStats()
-        updateOsirisShieldBlockStats()
+        updateShieldBlockStats()
         navigationController?.setNavigationBarHidden(true, animated: false)
 
         updateToggleStatus()
@@ -302,6 +281,7 @@ class ShieldsViewController: UIViewController, PopoverContentComponent, Themeabl
                 }
             }
         }
+
     }
     
     @objc func buttonPressed() {

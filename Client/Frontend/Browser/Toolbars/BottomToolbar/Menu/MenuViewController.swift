@@ -119,10 +119,10 @@ class MenuViewController: UITableViewController {
             switch self {
 //            case .vpn: return #imageLiteral(resourceName: "vpn_menu_icon").template
             case .osiris: return #imageLiteral(resourceName: "Osiris_Logo_Hexagram")
-            case .bookmarks: return #imageLiteral(resourceName: "menu_bookmarks").template
+            case .bookmarks: return #imageLiteral(resourceName: "bookmark").template
             case .history: return #imageLiteral(resourceName: "menu-history").template
             case .settings: return #imageLiteral(resourceName: "menu-settings").template
-            case .add: return #imageLiteral(resourceName: "menu-add-bookmark").template
+            case .add: return #imageLiteral(resourceName: "addbookmark").template
             case .share: return #imageLiteral(resourceName: "nav-share").template
             case .downloads: return #imageLiteral(resourceName: "menu-downloads").template
             }
