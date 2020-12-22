@@ -30,7 +30,7 @@ extension ShieldsViewController {
             $0.isLayoutMarginsRelativeArrangement = true
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
-        
+        let osirisArmorView = OsirisArmorView()
         let simpleShieldView = SimpleShieldsView()
         let advancedControlsBar = AdvancedControlsBarView()
         let advancedShieldView = AdvancedShieldsView().then {
@@ -42,8 +42,8 @@ extension ShieldsViewController {
         
         override init(frame: CGRect) {
             super.init(frame: frame)
-            
             stackView.addArrangedSubview(simpleShieldView)
+//            stackView.addArrangedSubview(osirisArmorView)
 //            stackView.addArrangedSubview(advancedControlsBar)
 //            stackView.addArrangedSubview(advancedShieldView)
             

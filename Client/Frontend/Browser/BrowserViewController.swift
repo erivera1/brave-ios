@@ -2203,7 +2203,7 @@ extension BrowserViewController: TopToolbarDelegate {
         if selectedTab.url?.isLocalUtility == true {
             return
         }
-        let shields = ShieldsViewController(tab: selectedTab)
+        let shields = OsirisArmorViewController(tab: selectedTab)//ShieldsViewController(tab: selectedTab)
         shields.shieldsSettingsChanged = { [unowned self] _ in
             // Update the shields status immediately
             self.topToolbar.refreshShieldsStatus()

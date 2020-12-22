@@ -13,7 +13,8 @@ import Shared
 class ShieldsSwitch: UIControl {
     
     /// The static size of this switch
-    private static let size = CGSize(width: 100, height: 60)
+//    private static let size = CGSize(width: 100, height: 60)
+    private static let size = CGSize(width: 50, height: 30)
     
     /// Whether or not the switch is currently toggled on or off
     var isOn: Bool {

@@ -1118,6 +1118,9 @@
 		FA9293D41D6580E100AC8D33 /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9293D31D6580E100AC8D33 /* QRCodeViewController.swift */; };
 		FA9294011D6584A200AC8D33 /* QRCode.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA9294001D6584A200AC8D33 /* QRCode.xcassets */; };
 		FC32F743257F3FC00090A2A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC32F742257F3FC00090A2A7 /* LaunchScreen.storyboard */; };
+		FC526CC2258C38C0003CB4F1 /* OsirisArmorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC526CC1258C38C0003CB4F1 /* OsirisArmorView.swift */; };
+		FC526CD8258C4641003CB4F1 /* OsirisArmorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC526CD7258C4641003CB4F1 /* OsirisArmorViewController.swift */; };
+		FC526CEE258C7A7A003CB4F1 /* OsirisArmorUrlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC526CED258C7A7A003CB4F1 /* OsirisArmorUrlView.swift */; };
 		FC54E5042579DB88005F6E42 /* OsirisBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC54E5032579DB88005F6E42 /* OsirisBrowserViewController.swift */; };
 		FC54E511257A083C005F6E42 /* OsirisTabLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC54E510257A083C005F6E42 /* OsirisTabLocationView.swift */; };
 		FC54E527257A1C99005F6E42 /* OsirisTopToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC54E526257A1C99005F6E42 /* OsirisTopToolbarView.swift */; };
@@ -2785,6 +2788,9 @@
 		FA9293D31D6580E100AC8D33 /* QRCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeViewController.swift; sourceTree = "<group>"; };
 		FA9294001D6584A200AC8D33 /* QRCode.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = QRCode.xcassets; sourceTree = "<group>"; };
 		FC32F742257F3FC00090A2A7 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FC526CC1258C38C0003CB4F1 /* OsirisArmorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OsirisArmorView.swift; sourceTree = "<group>"; };
+		FC526CD7258C4641003CB4F1 /* OsirisArmorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OsirisArmorViewController.swift; sourceTree = "<group>"; };
+		FC526CED258C7A7A003CB4F1 /* OsirisArmorUrlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OsirisArmorUrlView.swift; sourceTree = "<group>"; };
 		FC54E5032579DB88005F6E42 /* OsirisBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OsirisBrowserViewController.swift; sourceTree = "<group>"; };
 		FC54E510257A083C005F6E42 /* OsirisTabLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OsirisTabLocationView.swift; sourceTree = "<group>"; };
 		FC54E526257A1C99005F6E42 /* OsirisTopToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OsirisTopToolbarView.swift; sourceTree = "<group>"; };
@@ -4907,6 +4913,7 @@
 		A104E190210A380E00D2323E /* Shields */ = {
 			isa = PBXGroup;
 			children = (
+				FC526CC0258C37A6003CB4F1 /* OsirisArmor */,
 				A104E198210A384400D2323E /* ShieldsViewController.swift */,
 				27C461DD211B76500088A441 /* ShieldsView.swift */,
 				278C467A23EDF0940083347F /* ShieldsSwitch.swift */,
@@ -5641,6 +5648,16 @@
 				F9616E6A240EE43F00667C2D /* PaymentRequest.swift */,
 			);
 			path = PaymentRequest;
+			sourceTree = "<group>";
+		};
+		FC526CC0258C37A6003CB4F1 /* OsirisArmor */ = {
+			isa = PBXGroup;
+			children = (
+				FC526CC1258C38C0003CB4F1 /* OsirisArmorView.swift */,
+				FC526CD7258C4641003CB4F1 /* OsirisArmorViewController.swift */,
+				FC526CED258C7A7A003CB4F1 /* OsirisArmorUrlView.swift */,
+			);
+			path = OsirisArmor;
 			sourceTree = "<group>";
 		};
 		FC54E5022579DB3C005F6E42 /* Osiris */ = {
@@ -7089,6 +7106,7 @@
 				0AAAAC972249174A009A8763 /* SyncAlerts.swift in Sources */,
 				0A6F957624044F070098217F /* NTPLearnMoreContentView.swift in Sources */,
 				4422D4F221BFFB7600BF1855 /* builder.cc in Sources */,
+				FC526CD8258C4641003CB4F1 /* OsirisArmorViewController.swift in Sources */,
 				0A1E84432190A57F0042F782 /* SyncWelcomeViewController.swift in Sources */,
 				D308E4E41A5306F500842685 /* SearchEngines.swift in Sources */,
 				4422D55121BFFB7E00BF1855 /* set.cc in Sources */,
@@ -7327,6 +7345,7 @@
 				278C46AC23F499730083347F /* AdvancedShieldsView.swift in Sources */,
 				0AEF16C723CDE4B800158AD9 /* BottomSheetViewController.swift in Sources */,
 				2F44FCC51A9E85E900FD20CC /* SettingsTableSectionHeaderFooterView.swift in Sources */,
+				FC526CC2258C38C0003CB4F1 /* OsirisArmorView.swift in Sources */,
 				44331DD8225521B6007E3E93 /* UrlBarTextField.swift in Sources */,
 				A9072B801D07B34100459960 /* NoImageModeHelper.swift in Sources */,
 				4422D4EB21BFFB7600BF1855 /* filename.cc in Sources */,
@@ -7334,6 +7353,7 @@
 				2755EABD255323C60033C43F /* PublisherInfoExtensions.swift in Sources */,
 				2746D28324A4FB7400E38852 /* RewardsInternalsSharable.swift in Sources */,
 				44331DDA22552313007E3E93 /* LocationContainerView.swift in Sources */,
+				FC526CEE258C7A7A003CB4F1 /* OsirisArmorUrlView.swift in Sources */,
 				2718780A216526240006036E /* PopupView.swift in Sources */,
 				4422D4C221BFFB7600BF1855 /* comparator.cc in Sources */,
 				0A1E84452190A57F0042F782 /* SyncPairWordsViewController.swift in Sources */,

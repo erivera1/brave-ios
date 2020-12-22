@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Artboard.png",
+      "filename" : "adsBlockIcon.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Artboard@2x.png",
+      "filename" : "adsBlockIcon@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Artboard@3x.png",
+      "filename" : "adsBlockIcon@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

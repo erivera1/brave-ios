@@ -122,9 +122,9 @@ class NewTabPageViewController: UIViewController, Themeable {
             }, legacyLongPressAction: { [weak self] alertController in
                 self?.present(alertController, animated: true)
             }),
-            FavoritesOverflowSectionProvider(action: { [weak self] in
-                self?.delegate?.focusURLBar()
-            }),
+//            FavoritesOverflowSectionProvider(action: { [weak self] in
+//                self?.delegate?.focusURLBar()
+//            }),
 //            DuckDuckGoCalloutSectionProvider(profile: profile, action: { [weak self] in
 //                self?.delegate?.tappedDuckDuckGoCallout()
 //            })
