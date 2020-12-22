@@ -7,7 +7,7 @@ import UIKit
 
 class OsirisArmorView: UIView, Themeable {
 
-    var faviconImageView = UIImageView().then {
+    var armorImageView = UIImageView().then {
         $0.contentMode = .scaleAspectFit
         $0.image = UIImage(named: "amor_active")
         $0.snp.makeConstraints {
@@ -97,6 +97,8 @@ class OsirisArmorView: UIView, Themeable {
         $0.backgroundColor = .green
         $0.setTitle("test", for: .normal)
     }
+    
+    let shieldsSwitch = ShieldsSwitch()
 //        .then {
 //        $0.title(for: .normal) = "test"
 //    }
@@ -110,35 +112,137 @@ class OsirisArmorView: UIView, Themeable {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        addSubview(faviconImageView)
-        addSubview(buttonTest)
+//        addSubview(faviconImageView)
+//        addSubview(buttonTest)
+//
+//        buttonTest.snp.makeConstraints { make in
+//            make.right.equalTo(0)
+//            make.top.equalTo(0)
+//            make.width.equalTo(100)
+//            make.height.equalTo(25)
+//        }
+//
+//        buttonTest.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
+//
+//        faviconImageView.snp.remakeConstraints { make in
+//            make.top.equalTo(self).offset(20)
+//            make.width.equalTo(170)
+//            make.height.equalTo(140)
+//            make.centerX.equalTo(self)
+//        }
+//
+//        addSubview(urlView)
+//        urlView.snp.makeConstraints { make in
+//            make.left.equalTo(20)
+//            make.top.equalTo(faviconImageView.snp.bottom).offset(20)
+//            make.right.equalTo(-20)
+//            make.height.equalTo(30)
+//        }
+//
+//        urlView.addSubview(hostTitleLabel)
+//
+//        hostTitleLabel.snp.makeConstraints { make in
+//            make.left.equalTo(0)
+//            make.right.equalTo(-60)
+//            make.top.equalTo(0)
+//            make.height.equalTo(14)
+//        }
+//
+//        urlView.addSubview(hostLabel)
+//
+//        hostLabel.snp.makeConstraints { make in
+//            make.left.equalTo(0)
+//            make.right.equalTo(-60)
+//            make.top.equalTo(hostTitleLabel.snp.bottom)
+//            make.height.equalTo(14)
+//        }
+//
+////        urlView.isUserInteractionEnabled = true
+//
+//        urlView.addSubview(toggle)
+//
+//        toggle.snp.makeConstraints { make in
+//            make.right.equalTo(0)
+//            make.top.equalTo(0)
+//        }
+//
+//        urlView.bringSubviewToFront(toggle)
+//
+//        addSubview(adsCountView)
+//
+//        adsCountView.snp.makeConstraints { make in
+//            make.left.equalTo(20)
+//            make.top.equalTo(urlView.snp.bottom).offset(20)
+//            make.right.equalTo(-20)
+//            make.height.equalTo(60)
+//        }
+//
+//        adsCountView.addSubview(adsBloclImageView)
+//
+//        adsBloclImageView.snp.remakeConstraints { make in
+//            make.left.equalTo(adsCountView).offset(5)
+//            make.width.equalTo(30)
+//            make.height.equalTo(50)
+//            make.centerY.equalTo(adsCountView)
+//        }
+//
+//        adsCountView.addSubview(adBlockLabel)
+//
+//        adBlockLabel.snp.remakeConstraints { make in
+//            make.left.equalTo(adsBloclImageView.snp.right).offset(15)
+//            make.width.equalTo(20)
+//            make.height.equalTo(30)
+//            make.centerY.equalTo(adsCountView)
+//        }
+//
+//        adsCountView.addSubview(adBlockTitleLabel)
+//
+//        adBlockTitleLabel.snp.remakeConstraints { make in
+//            make.left.equalTo(adBlockLabel.snp.right).offset(15)
+//            make.right.equalTo(adsCountView.snp.right)
+//            make.height.equalTo(30)
+//            make.centerY.equalTo(adsCountView)
+//        }
+//
+//        addSubview(brokenSiteTitleLabel)
+//
+//        brokenSiteTitleLabel.snp.makeConstraints { make in
+//            make.left.equalTo(30)
+//            make.top.equalTo(adsCountView.snp.bottom).offset(20)
+//            make.right.equalTo(-30)
+//            make.height.equalTo(30)
+//        }
         
-        buttonTest.snp.makeConstraints { make in
-            make.right.equalTo(0)
-            make.top.equalTo(0)
-            make.width.equalTo(100)
-            make.height.equalTo(25)
-        }
         
-        buttonTest.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
         
-        faviconImageView.snp.remakeConstraints { make in
+//        self.backgroundColor = .yellow
+        addSubview(armorImageView)
+        armorImageView.snp.remakeConstraints { make in
             make.top.equalTo(self).offset(20)
             make.width.equalTo(170)
             make.height.equalTo(140)
             make.centerX.equalTo(self)
         }
         
-        addSubview(urlView)
+        let stackView = UIStackView().then {
+            $0.axis = .vertical
+            $0.spacing = 16
+            $0.alignment = .center
+            $0.layoutMargins = UIEdgeInsets(top: 24, left: 24, bottom: 24, right: 24)
+            $0.isLayoutMarginsRelativeArrangement = true
+        }
+        
+        addSubview(stackView)
+        stackView.snp.makeConstraints {
+            $0.edges.equalTo(self)
+        }
+
         urlView.snp.makeConstraints { make in
-            make.left.equalTo(20)
-            make.top.equalTo(faviconImageView.snp.bottom).offset(20)
-            make.right.equalTo(-20)
+            make.width.equalTo(300)
             make.height.equalTo(30)
         }
         
         urlView.addSubview(hostTitleLabel)
-        
         hostTitleLabel.snp.makeConstraints { make in
             make.left.equalTo(0)
             make.right.equalTo(-60)
@@ -155,24 +259,11 @@ class OsirisArmorView: UIView, Themeable {
             make.height.equalTo(14)
         }
         
-//        urlView.isUserInteractionEnabled = true
-       
-        urlView.addSubview(toggle)
-
-        toggle.snp.makeConstraints { make in
+        urlView.addSubview(shieldsSwitch)
+        
+        shieldsSwitch.snp.makeConstraints { make in
             make.right.equalTo(0)
             make.top.equalTo(0)
-        }
-
-        urlView.bringSubviewToFront(toggle)
-        
-        addSubview(adsCountView)
-        
-        adsCountView.snp.makeConstraints { make in
-            make.left.equalTo(20)
-            make.top.equalTo(urlView.snp.bottom).offset(20)
-            make.right.equalTo(-20)
-            make.height.equalTo(60)
         }
         
         adsCountView.addSubview(adsBloclImageView)
@@ -204,15 +295,31 @@ class OsirisArmorView: UIView, Themeable {
         
         addSubview(brokenSiteTitleLabel)
         
-        brokenSiteTitleLabel.snp.makeConstraints { make in
-            make.left.equalTo(30)
-            make.top.equalTo(adsCountView.snp.bottom).offset(20)
-            make.right.equalTo(-30)
-            make.height.equalTo(30)
-        }
         
-        self.backgroundColor = .yellow
+//        [shieldsDownDisclaimerLabel, reportSiteButton].forEach(shieldsDownStackView.addArrangedSubview)
+        stackView.addStackViewItems(
+            .view(armorImageView),
+            .customSpace(20),
+            .view(urlView),
+            .customSpace(64),
+            .view(adsCountView),
+            .customSpace(32),
+            .view(brokenSiteTitleLabel)
+        )
 
+    }
+    
+    func setOn(_ on: Bool, animated: Bool) {
+        if on {
+            DispatchQueue.main.async {
+                self.armorImageView.image = UIImage(named: "amor_active")
+            }
+        } else {
+            DispatchQueue.main.async {
+                self.armorImageView.image = UIImage(named: "armor_inactive")
+                self.adBlockLabel.text = "0"
+            }
+        }
     }
     
     @objc func buttonPressed() {

@@ -823,7 +823,7 @@ fileprivate class TabManagerDataSource: NSObject, UICollectionViewDataSource {
         let tab = tabs[indexPath.item]
 
         tabCell.titleText.text = tab.displayTitle
-        tabCell.favicon.image = #imageLiteral(resourceName: "defaultFavicon")
+//        tabCell.favicon.image = #imageLiteral(resourceName: "defaultFavicon")
 
         if !tab.displayTitle.isEmpty {
             tabCell.accessibilityLabel = tab.displayTitle
@@ -844,7 +844,8 @@ fileprivate class TabManagerDataSource: NSObject, UICollectionViewDataSource {
         } else if let url = tab.url, !url.isLocal {
             tabCell.favicon.loadFavicon(for: url)
         } else {
-            tabCell.favicon.image = #imageLiteral(resourceName: "defaultFavicon")
+//            OSIRIS NEEDS TO BE CHANGED ONCE DESIGN IS AVAILABLE
+//            tabCell.favicon.image = #imageLiteral(resourceName: "defaultFavicon")
         }
 
         if tab == tabManager.selectedTab {

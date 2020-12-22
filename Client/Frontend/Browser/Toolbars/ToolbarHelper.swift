@@ -13,7 +13,7 @@ class ToolbarHelper: NSObject {
         self.toolbar = toolbar
         super.init()
         
-        toolbar.backButton.setImage(#imageLiteral(resourceName: "nav-back").template, for: .normal)
+        toolbar.backButton.setImage(#imageLiteral(resourceName: "chevron-thin-left").template, for: .normal)
         toolbar.backButton.accessibilityLabel = Strings.tabToolbarBackButtonAccessibilityLabel
         let longPressGestureBackButton = UILongPressGestureRecognizer(target: self, action: #selector(didLongPressBack))
         toolbar.backButton.addGestureRecognizer(longPressGestureBackButton)
@@ -38,11 +38,11 @@ class ToolbarHelper: NSObject {
         // Same long press gesture allows creating tab on NTP, esp private tab easily
         toolbar.searchButton.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(didLongPressAddTab(_:))))
 
-        toolbar.menuButton.setImage(#imageLiteral(resourceName: "menu_more").template, for: .normal)
+        toolbar.menuButton.setImage(#imageLiteral(resourceName: "reader").template, for: .normal)
         toolbar.menuButton.accessibilityLabel = Strings.tabToolbarMenuButtonAccessibilityLabel
         toolbar.menuButton.addTarget(self, action: #selector(didClickMenu), for: UIControl.Event.touchUpInside)
         
-        toolbar.forwardButton.setImage(#imageLiteral(resourceName: "nav-forward").template, for: .normal)
+        toolbar.forwardButton.setImage(#imageLiteral(resourceName: "chevron-thin-right").template, for: .normal)
         toolbar.forwardButton.accessibilityLabel = Strings.tabToolbarForwardButtonAccessibilityLabel
         let longPressGestureForwardButton = UILongPressGestureRecognizer(target: self, action: #selector(didLongPressForward))
         toolbar.forwardButton.addGestureRecognizer(longPressGestureForwardButton)
