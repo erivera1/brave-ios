@@ -33,7 +33,7 @@ class SearchSettingsTableViewController: UITableViewController {
         let backgroundImageView = UIImageView()
         backgroundImageView.image = UIImage(named: OsirisConstants.backGroundImage)
         self.tableView.backgroundView = backgroundImageView
-        navigationItem.title = Strings.searchSettingNavTitle
+        navigationItem.title = "Search Engines"//Strings.searchSettingNavTitle
         self.tableView.backgroundColor = .clear
         // To allow re-ordering the list of search engines at all times.
         tableView.isEditing = true
@@ -209,7 +209,7 @@ class SearchSettingsTableViewController: UITableViewController {
         let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: SectionHeaderIdentifier) as! SettingsTableSectionHeaderFooterView
         
         let sectionTitle = section == SectionDefault ?
-            Strings.currentlyUsedSearchEngines : Strings.quickSearchEngines
+           "My Search Engine" : Strings.quickSearchEngines //Strings.currentlyUsedSearchEngines
         
         headerView.titleLabel.text = sectionTitle
         headerView.backgroundColor = .yellow

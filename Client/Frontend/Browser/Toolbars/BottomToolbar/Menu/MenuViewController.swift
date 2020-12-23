@@ -120,11 +120,11 @@ class MenuViewController: UITableViewController {
 //            case .vpn: return #imageLiteral(resourceName: "vpn_menu_icon").template
             case .osiris: return #imageLiteral(resourceName: "Osiris_Logo_Hexagram")
             case .bookmarks: return #imageLiteral(resourceName: "bookmark").template
-            case .history: return #imageLiteral(resourceName: "menu-history").template
-            case .settings: return #imageLiteral(resourceName: "menu-settings").template
+            case .history: return #imageLiteral(resourceName: "history").template
+            case .settings: return #imageLiteral(resourceName: "settings").template
             case .add: return #imageLiteral(resourceName: "addbookmark").template
-            case .share: return #imageLiteral(resourceName: "nav-share").template
-            case .downloads: return #imageLiteral(resourceName: "menu-downloads").template
+            case .share: return #imageLiteral(resourceName: "share").template
+            case .downloads: return #imageLiteral(resourceName: "download").template
             }
         }
     }

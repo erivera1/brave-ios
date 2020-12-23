@@ -347,7 +347,7 @@ private func createTransitionCellFromTab(_ tab: Tab?, withFrame frame: CGRect) -
     if let favIcon = tab?.displayFavicon {
         cell.favicon.sd_setImage(with: URL(string: favIcon.url)!)
     } else {
-        cell.favicon.image = #imageLiteral(resourceName: "defaultFavicon")
+//        cell.favicon.image = #imageLiteral(resourceName: "defaultFavicon")
     }
     cell.applyTheme(Theme.of(tab))
 

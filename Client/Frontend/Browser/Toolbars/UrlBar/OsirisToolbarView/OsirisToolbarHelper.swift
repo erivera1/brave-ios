@@ -23,7 +23,6 @@ class OsirisToolbarHelper: ToolbarHelper {
         let longPressGestureTabsButton = UILongPressGestureRecognizer(target: self, action: #selector(didLongPressTabs))
         toolbar.tabsButton.addGestureRecognizer(longPressGestureTabsButton)
         
-        
         toolbar.shareButton.setImage(#imageLiteral(resourceName: "nav-share").template, for: .normal)
         toolbar.shareButton.accessibilityLabel = Strings.tabToolbarShareButtonAccessibilityLabel
         toolbar.shareButton.addTarget(self, action: #selector(didClickShare), for: UIControl.Event.touchUpInside)
@@ -33,7 +32,7 @@ class OsirisToolbarHelper: ToolbarHelper {
         toolbar.addTabButton.addTarget(self, action: #selector(didClickAddTab), for: UIControl.Event.touchUpInside)
         toolbar.addTabButton.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(didLongPressAddTab(_:))))
         
-        toolbar.searchButton.setImage(#imageLiteral(resourceName: "ntp-search").template, for: .normal)
+        toolbar.searchButton.setImage(#imageLiteral(resourceName: "search_icon").template, for: .normal)
         // Accessibility label not needed, since overriden in the bottom tool bar class.
         toolbar.searchButton.addTarget(self, action: #selector(didClickSearch), for: UIControl.Event.touchUpInside)
         // Same long press gesture allows creating tab on NTP, esp private tab easily

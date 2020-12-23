@@ -178,17 +178,19 @@ class FavoritesSectionProvider: NSObject, NTPObservableSectionProvider {
                 favourite.delete()
             })
             
-            var urlChildren: [UIAction] = [openInNewTab]
-            if !PrivateBrowsingManager.shared.isPrivateBrowsing {
-                let openInNewPrivateTab = UIAction(title: Strings.openNewPrivateTabButtonTitle, handler: UIAction.deferredActionHandler { _ in
-                    self.action(favourite, .opened(inNewTab: true, switchingToPrivateMode: true))
-                })
-                urlChildren.append(openInNewPrivateTab)
-            }
+            //OSIRIS REMOVED OPEN IN PRIVATE MODE
+            let urlChildren: [UIAction] = [openInNewTab]
+//            if !PrivateBrowsingManager.shared.isPrivateBrowsing {
+//                let openInNewPrivateTab = UIAction(title: Strings.openNewPrivateTabButtonTitle, handler: UIAction.deferredActionHandler { _ in
+//                    self.action(favourite, .opened(inNewTab: true, switchingToPrivateMode: true))
+//                })
+//                urlChildren.append(openInNewPrivateTab)
+//            }
             
             let urlMenu = UIMenu(title: "", options: .displayInline, children: urlChildren)
             let favMenu = UIMenu(title: "", options: .displayInline, children: [edit, delete])
             return UIMenu(title: favourite.title ?? favourite.url ?? "", identifier: nil, children: [urlMenu, favMenu])
+//            return UIMenu(title: favourite.title ?? favourite.url ?? "", identifier: nil, children: [favMenu])
         }
     }
     

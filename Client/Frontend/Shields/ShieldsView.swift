@@ -49,7 +49,7 @@ extension ShieldsViewController {
             
             addSubview(scrollView)
             scrollView.addSubview(stackView)
-            
+            scrollView.isScrollEnabled = false
             scrollView.snp.makeConstraints {
                 $0.edges.equalToSuperview()
             }

@@ -59,7 +59,7 @@ class OsirisArmorView: UIView, Themeable {
     let brokenSiteTitleLabel = UILabel().then {
         $0.font = .systemFont(ofSize: 12.0)
         $0.numberOfLines = 2
-        $0.text = "If this site appears to be broken,\n try to turn of Osiris Armor"
+        $0.text = "If this site appears broken, \n try to turn off the Osiris Armor"
         $0.textColor = .lightGray
         $0.textAlignment = .center
     }

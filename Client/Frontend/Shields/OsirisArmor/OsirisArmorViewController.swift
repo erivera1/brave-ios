@@ -164,7 +164,7 @@ class OsirisArmorViewController: ShieldsViewController {
         shieldsView.layoutIfNeeded()
         preferredContentSize = CGSize(
             width: width,
-            height: 360
+            height: 380
         )
     }
 

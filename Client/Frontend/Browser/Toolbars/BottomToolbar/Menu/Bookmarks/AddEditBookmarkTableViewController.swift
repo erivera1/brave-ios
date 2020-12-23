@@ -158,7 +158,6 @@ class AddEditBookmarkTableViewController: UITableViewController {
         let backgroundImageView = UIImageView()
         backgroundImageView.image = UIImage(named: OsirisConstants.backGroundImage)
         self.tableView.backgroundView = backgroundImageView
-        bookmarkDetailsView.backgroundColor = .systemPink
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -220,7 +219,6 @@ class AddEditBookmarkTableViewController: UITableViewController {
         }
         
         tableView.reloadData()
-        tableView.backgroundColor = UIColor.yellow
     }
     
     // MARK: - Saving data
@@ -387,7 +385,6 @@ class AddEditBookmarkTableViewController: UITableViewController {
                 let cell = IndentedImageTableViewCell(image: #imageLiteral(resourceName: "menu_folder"))
                 cell.folderName.text = folder.displayTitle
                 cell.tag = folderCellTag
-                cell.backgroundColor = .systemPurple
                 return cell
             }
         case .folderHierarchy:

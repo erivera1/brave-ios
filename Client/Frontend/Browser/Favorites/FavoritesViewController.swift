@@ -12,9 +12,9 @@ private let log = Logger.browserLogger
 
 private class FavoritesHeaderView: UICollectionReusableView {
     let label = UILabel().then {
-        //EMR removed Favorites text
+        //Osiris EMR removed Favorites text
         $0.text = ""
-        $0.font = .systemFont(ofSize: 18, weight: .semibold)
+        $0.font = .systemFont(ofSize: 14, weight: .regular)
     }
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -245,7 +245,7 @@ extension FavoritesViewController: UICollectionViewDataSource, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: collectionView.bounds.width, height: 32)
+        return CGSize(width: collectionView.bounds.width, height: 0)// height 32
     }
     
     func collectionView(_ collectionView: UICollectionView, canMoveItemAt indexPath: IndexPath) -> Bool {
@@ -300,6 +300,10 @@ extension FavoritesViewController: UICollectionViewDataSource, UICollectionViewD
                 return nil
         }
         return UITargetedPreview(view: cell.imageView)
+    }
+    
+    func collectionView(tableView: UICollectionView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 0.0
     }
 }
 

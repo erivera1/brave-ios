@@ -225,7 +225,7 @@ class SettingsViewController: TableViewController {
                     viewController.model = self.profile.searchEngines
                     viewController.profile = self.profile
                     self.navigationController?.pushViewController(viewController, animated: true)
-                }, image: #imageLiteral(resourceName: "settings-search").template, accessory: .disclosureIndicator, cellClass: MultilineValue1Cell.self),
+                }, image: #imageLiteral(resourceName: "search_icon").template, accessory: .disclosureIndicator, cellClass: MultilineValue1Cell.self),
 //                Row(text: Strings.sync, selection: { [unowned self] in
 //                    if BraveSyncAPI.shared.isInSyncGroup {
 //                        self.navigationController?

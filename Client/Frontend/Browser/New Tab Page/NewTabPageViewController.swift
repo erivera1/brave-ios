@@ -122,32 +122,32 @@ class NewTabPageViewController: UIViewController, Themeable {
             }, legacyLongPressAction: { [weak self] alertController in
                 self?.present(alertController, animated: true)
             }),
-//            FavoritesOverflowSectionProvider(action: { [weak self] in
-//                self?.delegate?.focusURLBar()
-//            }),
-//            DuckDuckGoCalloutSectionProvider(profile: profile, action: { [weak self] in
-//                self?.delegate?.tappedDuckDuckGoCallout()
-//            })
+            FavoritesOverflowSectionProvider(action: { [weak self] in
+                self?.delegate?.focusURLBar()
+            }),
+            DuckDuckGoCalloutSectionProvider(profile: profile, action: { [weak self] in
+                self?.delegate?.tappedDuckDuckGoCallout()
+            })
         ]
       
-        // This is a one-off view, adding it to the NTP only if necessary.
-        if DefaultBrowserCalloutProvider.shouldShowCallout {
-            sections.insert(DefaultBrowserCalloutProvider(), at: 0)
-        }
-        
-        #if !NO_BRAVE_TODAY
-        if !PrivateBrowsingManager.shared.isPrivateBrowsing {
-            sections.append(
-                BraveTodaySectionProvider(
-                    dataSource: feedDataSource,
-                    actionHandler: { [weak self] in
-                        self?.handleBraveTodayAction($0)
-                    }
-                )
-            )
-            layout.braveTodaySection = sections.firstIndex(where: { $0 is BraveTodaySectionProvider })
-        }
-        #endif
+//        // This is a one-off view, adding it to the NTP only if necessary.
+//        if DefaultBrowserCalloutProvider.shouldShowCallout {
+//            sections.insert(DefaultBrowserCalloutProvider(), at: 0)
+//        }
+//
+//        #if !NO_BRAVE_TODAY
+//        if !PrivateBrowsingManager.shared.isPrivateBrowsing {
+//            sections.append(
+//                BraveTodaySectionProvider(
+//                    dataSource: feedDataSource,
+//                    actionHandler: { [weak self] in
+//                        self?.handleBraveTodayAction($0)
+//                    }
+//                )
+//            )
+//            layout.braveTodaySection = sections.firstIndex(where: { $0 is BraveTodaySectionProvider })
+//        }
+//        #endif
         
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -162,13 +162,13 @@ class NewTabPageViewController: UIViewController, Themeable {
             self?.setupBackgroundImage()
         }
         
-        #if !NO_BRAVE_TODAY
-        Preferences.BraveToday.isEnabled.observe(from: self)
-        feedDataSource.observeState(from: self) { [weak self] in
-            self?.handleFeedStateChange($0, $1)
-        }
-        NotificationCenter.default.addObserver(self, selector: #selector(checkForUpdatedFeed), name: UIApplication.didBecomeActiveNotification, object: nil)
-        #endif
+//        #if !NO_BRAVE_TODAY
+//        Preferences.BraveToday.isEnabled.observe(from: self)
+//        feedDataSource.observeState(from: self) { [weak self] in
+//            self?.handleFeedStateChange($0, $1)
+//        }
+//        NotificationCenter.default.addObserver(self, selector: #selector(checkForUpdatedFeed), name: UIApplication.didBecomeActiveNotification, object: nil)
+//        #endif
     }
     
     @available(*, unavailable)
