@@ -6123,6 +6123,7 @@
 				F84B22531A0920C600AAB793 /* Embed App Extensions */,
 				E6B09CD31C74EEDB00C63FA1 /* Copy Frameworks */,
 				2757538624D9F27100DF54EC /* Copy BraveRewards dSYM */,
+				D920D00F25A6F71C007EF79F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -6612,6 +6613,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+		D920D00F25A6F71C007EF79F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nrm -rf ${TMPDIR}TemporaryItems/*carthage*\n/usr/local/bin/carthage copy-frameworks\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
