@@ -616,8 +616,6 @@ class BrowserViewController: UIViewController {
             
         }
         
-        KeyboardHelper.defaultHelper.addDelegate(self)
-        
         view.addLayoutGuide(pageOverlayLayoutGuide)
 
         webViewContainerBackdrop = UIView()
@@ -683,7 +681,7 @@ class BrowserViewController: UIViewController {
             }
             return true
         })
-
+        
         view.addSubview(alertStackView)
         footer = UIView()
         footer.translatesAutoresizingMaskIntoConstraints = false
