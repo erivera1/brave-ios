@@ -38,7 +38,7 @@ class FavoritesViewController: UIViewController, Themeable {
     private let frc = Bookmark.frc(forFavorites: true, parentFolder: nil)
     
     private let layout = UICollectionViewFlowLayout().then {
-        $0.sectionInset = UIEdgeInsets(top: 12, left: 0, bottom: 12, right: 0)
+        $0.sectionInset = UIEdgeInsets(top: 6, left: -8, bottom: 12, right: 0)
         $0.minimumInteritemSpacing = 0
         $0.minimumLineSpacing = 8
     }
@@ -83,8 +83,13 @@ class FavoritesViewController: UIViewController, Themeable {
             $0.edges.equalToSuperview()
         }
         
+        collectionView.snp.updateConstraints {
+            (make) in
+            make.top.equalTo(20)
+        }
+        
         collectionView.alwaysBounceVertical = true
-        collectionView.contentInset = UIEdgeInsets(top: 24, left: 0, bottom: 0, right: 0)
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         collectionView.backgroundColor = .clear
         collectionView.dataSource = self
         collectionView.delegate = self

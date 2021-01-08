@@ -87,13 +87,20 @@ class NewTabPageFlowLayout: UICollectionViewFlowLayout {
                     minimumInteritemSpacing = self.minimumInteritemSpacing
                 }
                 // Layout the first item in the secton to far-left
-                if attribute.indexPath.item == 0 {
-                    attribute.frame.origin.x = sectionInset.left
+//                if attribute.indexPath.item == 0 {
+//                    attribute.frame.origin.x = sectionInset.left
+//                } else {
+//                    // Otherwise layout based on previous item's origin
+//                    if let previousItemAttribute = layoutAttributesForItem(at: IndexPath(item: indexPath.item - 1, section: indexPath.section)) {
+//                        attribute.frame.origin.x = previousItemAttribute.frame.maxX + minimumInteritemSpacing
+//                    }
+//                }
+                // always set the item to left
+                let orientation = UIApplication.shared.statusBarOrientation
+                if orientation == .landscapeLeft || orientation == .landscapeRight {
+                    attribute.frame.origin.x = 12
                 } else {
-                    // Otherwise layout based on previous item's origin
-                    if let previousItemAttribute = layoutAttributesForItem(at: IndexPath(item: indexPath.item - 1, section: indexPath.section)) {
-                        attribute.frame.origin.x = previousItemAttribute.frame.maxX + minimumInteritemSpacing
-                    }
+                    attribute.frame.origin.x = 8
                 }
             }
         }
