@@ -8,7 +8,7 @@
 #include "Base.xcconfig"
 #include "Local.xcconfig"
 
-MOZ_BUNDLE_DISPLAY_NAME = Osiris
+MOZ_BUNDLE_DISPLAY_NAME = Osiris Browser
 
 BRAVE_API_KEY = key
 

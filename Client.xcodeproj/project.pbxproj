@@ -1133,6 +1133,7 @@
 		FCB03B722581D04300A268B8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCB03B712581D04300A268B8 /* Images.xcassets */; };
 		FCD0225125834CDF00416792 /* OsirisBottomToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD0225025834CDF00416792 /* OsirisBottomToolbarView.swift */; };
 		FCD023F225885F9800416792 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FCD023F125885F9800416792 /* GoogleService-Info.plist */; };
+		FCD4D35425A8403500AA7AE4 /* OsirisHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD4D35325A8403500AA7AE4 /* OsirisHelper.swift */; };
 		FCFABC8F257DD79600C5DE92 /* OsirisFavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFABC8E257DD79600C5DE92 /* OsirisFavoritesViewController.swift */; };
 		FCFABCC5257E184B00C5DE92 /* OsirisNewTabPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFABCC4257E184B00C5DE92 /* OsirisNewTabPageViewController.swift */; };
 /* End PBXBuildFile section */
@@ -2806,6 +2807,7 @@
 		FCC756EA2578979D006479F9 /* OsirisDebug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = OsirisDebug.xcconfig; sourceTree = "<group>"; };
 		FCD0225025834CDF00416792 /* OsirisBottomToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OsirisBottomToolbarView.swift; sourceTree = "<group>"; };
 		FCD023F125885F9800416792 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FCD4D35325A8403500AA7AE4 /* OsirisHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OsirisHelper.swift; sourceTree = "<group>"; };
 		FCFABC8E257DD79600C5DE92 /* OsirisFavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OsirisFavoritesViewController.swift; sourceTree = "<group>"; };
 		FCFABCC4257E184B00C5DE92 /* OsirisNewTabPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OsirisNewTabPageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -5695,6 +5697,7 @@
 				FCB038F325809B2F00A268B8 /* OsirisUX.swift */,
 				FCB038FF2581BA0A00A268B8 /* CheckVersion.swift */,
 				FC65AC9F2589947000E220CE /* OsirisConstants.swift */,
+				FCD4D35325A8403500AA7AE4 /* OsirisHelper.swift */,
 			);
 			path = OsirisShared;
 			sourceTree = "<group>";
@@ -7357,6 +7360,7 @@
 				44331DDA22552313007E3E93 /* LocationContainerView.swift in Sources */,
 				FC526CEE258C7A7A003CB4F1 /* OsirisArmorUrlView.swift in Sources */,
 				2718780A216526240006036E /* PopupView.swift in Sources */,
+				FCD4D35425A8403500AA7AE4 /* OsirisHelper.swift in Sources */,
 				4422D4C221BFFB7600BF1855 /* comparator.cc in Sources */,
 				0A1E84452190A57F0042F782 /* SyncPairWordsViewController.swift in Sources */,
 				2746D27524A2A9FE00E38852 /* RewardsInternalsContributionPublishersListController.swift in Sources */,
@@ -9057,7 +9061,7 @@
 				CODE_SIGN_ENTITLEMENTS = "$(SRCROOT)/Client/Entitlements/Enterprise.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = "1.0.7 ";
+				CURRENT_PROJECT_VERSION = 1.0.9;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -9889,7 +9893,7 @@
 				CODE_SIGN_ENTITLEMENTS = "$(SRCROOT)/Client/Entitlements/Release.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = "1.0.7 ";
+				CURRENT_PROJECT_VERSION = 1.0.9;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				ENABLE_TESTABILITY = YES;
@@ -12192,7 +12196,7 @@
 				CODE_SIGN_ENTITLEMENTS = "$(SRCROOT)/Client/Entitlements/Release (AppStore).entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = "1.0.7 ";
+				CURRENT_PROJECT_VERSION = 1.0.9;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				ENABLE_TESTABILITY = YES;
@@ -12429,7 +12433,7 @@
 				CODE_SIGN_ENTITLEMENTS = "$(SRCROOT)/Client/Entitlements/Dev.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = "1.0.7 ";
+				CURRENT_PROJECT_VERSION = 1.0.9;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -12729,7 +12733,7 @@
 				CODE_SIGN_ENTITLEMENTS = "$(SRCROOT)/Client/Entitlements/Beta.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = "1.0.7 ";
+				CURRENT_PROJECT_VERSION = 1.0.9;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				ENABLE_TESTABILITY = YES;
@@ -12983,7 +12987,7 @@
 				CODE_SIGN_ENTITLEMENTS = "$(SRCROOT)/Client/Entitlements/Debug.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = "1.0.7 ";
+				CURRENT_PROJECT_VERSION = 1.0.9;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -13153,7 +13157,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Client/ClientOsiris Release (AppStore) .entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = "1.0.7 ";
+				CURRENT_PROJECT_VERSION = 1.0.9;
 				DEVELOPMENT_TEAM = 2KXHQNX2M6;
 				ENABLE_BITCODE = NO;
 				ENABLE_TESTABILITY = YES;
@@ -13185,7 +13189,7 @@
 					"-ObjC",
 					"-lxml2",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "decenternet.osiris-2.ios.Osiris";
+				PRODUCT_BUNDLE_IDENTIFIER = "decenternet.osiris-2.ios";
 				PRODUCT_MODULE_NAME = Client;
 				PRODUCT_NAME = Client;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -13252,7 +13256,7 @@
 				MARKETING_VERSION = 1.2.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "decenternet.osiris-2.ios.Osiris.BraveShareTo";
+				PRODUCT_BUNDLE_IDENTIFIER = "decenternet.osiris-2.ios.Osiris";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -13984,7 +13988,7 @@
 				CODE_SIGN_ENTITLEMENTS = "$(SRCROOT)/Client/Entitlements/Release (AppStore).entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = "1.0.7 ";
+				CURRENT_PROJECT_VERSION = 1.0.9;
 				DEVELOPMENT_TEAM = T274W2V6K5;
 				ENABLE_BITCODE = NO;
 				ENABLE_TESTABILITY = YES;
@@ -14813,7 +14817,7 @@
 				CODE_SIGN_ENTITLEMENTS = "$(SRCROOT)/Client/Entitlements/Debug.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = "1.0.7 ";
+				CURRENT_PROJECT_VERSION = 1.0.9;
 				DEVELOPMENT_TEAM = 2KXHQNX2M6;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (

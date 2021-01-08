@@ -84,10 +84,11 @@ class OsirisArmorViewController: ShieldsViewController {
 //            }
 //        }
         if let url = url {
-            if url.absoluteString.contains("naver") || url.absoluteString.contains("daum") {
+            if OsirisHelper().disableBlocking(url: url) {
                 shieldsView.simpleShieldView.osirisArmorView.shieldsSwitch.isEnabled = false
             }
         }
+        
         shieldsView.simpleShieldView.osirisArmorView.shieldsSwitch.addTarget(self, action: #selector(osirisOverrideSwitchValueChanged), for: .valueChanged)
         shieldsView.simpleShieldView.osirisArmorView.hostLabel.text = url?.normalizedHost()
     }
