@@ -11,7 +11,8 @@ struct TwoLineCellUX {
     static let badgeSize: CGFloat = 16
     static let badgeMargin: CGFloat = 16
     static let borderFrameSize: CGFloat = 32
-    static let textColor = UIAccessibility.isDarkerSystemColorsEnabled ? UIColor.black : UIColor.Photon.grey80
+    static let textColor = UIAccessibility.isDarkerSystemColorsEnabled ? UIColor.black : UIColor.Photon.grey90
+    static let downloadTextColor = UIAccessibility.isDarkerSystemColorsEnabled ? UIColor.white : UIColor.black
     static let detailTextColor = UIAccessibility.isDarkerSystemColorsEnabled ? UIColor.Photon.grey60 : UIColor.Photon.grey50
     static let detailTextTopMargin: CGFloat = 0
 }
@@ -24,10 +25,14 @@ class TwoLineTableViewCell: UITableViewCell {
 
     // Override the default labels with our own to disable default UITableViewCell label behaviours like dynamic type
     override var textLabel: UILabel? {
+        _textLabel.textColor = TwoLineCellUX.downloadTextColor
+        _textLabel.alpha = 1
         return _textLabel
     }
 
     override var detailTextLabel: UILabel? {
+        _detailTextLabel.textColor = TwoLineCellUX.downloadTextColor
+        _detailTextLabel.alpha = 1
         return _detailTextLabel
     }
 
@@ -184,9 +189,7 @@ private class TwoLineCellHelper {
         } else {
             self.container?.backgroundColor = UIColor.clear
         }
-
-        textLabel.textColor = TwoLineCellUX.textColor
-        detailTextLabel.textColor = TwoLineCellUX.detailTextColor
+        
         setupDynamicFonts()
 
         imageView.contentMode = .scaleAspectFill

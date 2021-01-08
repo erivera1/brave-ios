@@ -85,12 +85,12 @@ class DownloadsPanel: UIViewController, UITableViewDelegate, UITableViewDataSour
             return
         }
         let backgroundImageView = UIImageView()
-        view.addSubview(backgroundImageView)
+        //view.addSubview(backgroundImageView)
         view.backgroundColor = UIColor.white
-        backgroundImageView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
-        }
-        self.view.addSubview(backgroundImageView)
+//        backgroundImageView.snp.makeConstraints {
+//            $0.edges.equalToSuperview()
+//        }
+//        self.view.addSubview(backgroundImageView)
 //        self.view.sendSubviewToBack(backgroundImageView)
         backgroundImageView.image = UIImage(named: OsirisConstants.backGroundImage)
 
@@ -103,7 +103,7 @@ class DownloadsPanel: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.separatorColor = UIColor.Photon.grey30
         tableView.accessibilityIdentifier = "DownloadsTable"
         tableView.cellLayoutMarginsFollowReadableWidth = false
-        
+        tableView.backgroundView = backgroundImageView
         // Set an empty footer to prevent empty cells from appearing in the list.
         tableView.tableFooterView = UIView()
         
@@ -323,6 +323,7 @@ class DownloadsPanel: UIViewController, UITableViewDelegate, UITableViewDataSour
         if let downloadedFile = downloadedFileForIndexPath(indexPath), let cell = cell as? TwoLineTableViewCell {
             cell.setLines(downloadedFile.filename, detailText: downloadedFile.formattedSize)
             cell.imageView?.image = iconForFileExtension(downloadedFile.fileExtension)
+            cell.backgroundColor = .clear
         }
         return cell
     }
