@@ -95,14 +95,27 @@ class NewTabPageFlowLayout: UICollectionViewFlowLayout {
 //                        attribute.frame.origin.x = previousItemAttribute.frame.maxX + minimumInteritemSpacing
 //                    }
 //                }
-                // always set the item to left
-                let orientation = UIApplication.shared.statusBarOrientation
+            }
+            
+            // always set the item to left
+            let orientation = UIApplication.shared.statusBarOrientation
+            if attribute.indexPath.item == 0 {
                 if orientation == .landscapeLeft || orientation == .landscapeRight {
                     attribute.frame.origin.x = 12
                 } else {
                     attribute.frame.origin.x = 8
                 }
+            } else {
+                if let previousItemAttribute = layoutAttributesForItem(at: IndexPath(item: indexPath.item - 1, section: indexPath.section)) {
+                    if orientation == .landscapeLeft || orientation == .landscapeRight {
+                        attribute.frame.origin.x = previousItemAttribute.frame.maxX + minimumInteritemSpacing - 3
+                    } else {
+                        attribute.frame.origin.x = previousItemAttribute.frame.maxX + minimumInteritemSpacing - 3
+                    }
+                    
+                }
             }
+            
         }
         
         if let braveTodaySection = braveTodaySection, indexPath.section == braveTodaySection {
