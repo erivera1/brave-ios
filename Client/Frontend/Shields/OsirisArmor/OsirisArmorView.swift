@@ -51,6 +51,7 @@ class OsirisArmorView: UIView, Themeable {
     }
     
     var adBlockLabel = UILabel().then {
+        $0.backgroundColor = .clear
         $0.font = .systemFont(ofSize: 24.0)
         $0.text = "3"
         $0.textAlignment = .center
@@ -99,123 +100,10 @@ class OsirisArmorView: UIView, Themeable {
     }
     
     let shieldsSwitch = ShieldsSwitch()
-//        .then {
-//        $0.title(for: .normal) = "test"
-//    }
-    
-//    var isOn: Bool {
-//        get { _isOn }
-//        set { setOn(newValue, animated: false) }
-//    }
-    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-//        addSubview(faviconImageView)
-//        addSubview(buttonTest)
-//
-//        buttonTest.snp.makeConstraints { make in
-//            make.right.equalTo(0)
-//            make.top.equalTo(0)
-//            make.width.equalTo(100)
-//            make.height.equalTo(25)
-//        }
-//
-//        buttonTest.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
-//
-//        faviconImageView.snp.remakeConstraints { make in
-//            make.top.equalTo(self).offset(20)
-//            make.width.equalTo(170)
-//            make.height.equalTo(140)
-//            make.centerX.equalTo(self)
-//        }
-//
-//        addSubview(urlView)
-//        urlView.snp.makeConstraints { make in
-//            make.left.equalTo(20)
-//            make.top.equalTo(faviconImageView.snp.bottom).offset(20)
-//            make.right.equalTo(-20)
-//            make.height.equalTo(30)
-//        }
-//
-//        urlView.addSubview(hostTitleLabel)
-//
-//        hostTitleLabel.snp.makeConstraints { make in
-//            make.left.equalTo(0)
-//            make.right.equalTo(-60)
-//            make.top.equalTo(0)
-//            make.height.equalTo(14)
-//        }
-//
-//        urlView.addSubview(hostLabel)
-//
-//        hostLabel.snp.makeConstraints { make in
-//            make.left.equalTo(0)
-//            make.right.equalTo(-60)
-//            make.top.equalTo(hostTitleLabel.snp.bottom)
-//            make.height.equalTo(14)
-//        }
-//
-////        urlView.isUserInteractionEnabled = true
-//
-//        urlView.addSubview(toggle)
-//
-//        toggle.snp.makeConstraints { make in
-//            make.right.equalTo(0)
-//            make.top.equalTo(0)
-//        }
-//
-//        urlView.bringSubviewToFront(toggle)
-//
-//        addSubview(adsCountView)
-//
-//        adsCountView.snp.makeConstraints { make in
-//            make.left.equalTo(20)
-//            make.top.equalTo(urlView.snp.bottom).offset(20)
-//            make.right.equalTo(-20)
-//            make.height.equalTo(60)
-//        }
-//
-//        adsCountView.addSubview(adsBloclImageView)
-//
-//        adsBloclImageView.snp.remakeConstraints { make in
-//            make.left.equalTo(adsCountView).offset(5)
-//            make.width.equalTo(30)
-//            make.height.equalTo(50)
-//            make.centerY.equalTo(adsCountView)
-//        }
-//
-//        adsCountView.addSubview(adBlockLabel)
-//
-//        adBlockLabel.snp.remakeConstraints { make in
-//            make.left.equalTo(adsBloclImageView.snp.right).offset(15)
-//            make.width.equalTo(20)
-//            make.height.equalTo(30)
-//            make.centerY.equalTo(adsCountView)
-//        }
-//
-//        adsCountView.addSubview(adBlockTitleLabel)
-//
-//        adBlockTitleLabel.snp.remakeConstraints { make in
-//            make.left.equalTo(adBlockLabel.snp.right).offset(15)
-//            make.right.equalTo(adsCountView.snp.right)
-//            make.height.equalTo(30)
-//            make.centerY.equalTo(adsCountView)
-//        }
-//
-//        addSubview(brokenSiteTitleLabel)
-//
-//        brokenSiteTitleLabel.snp.makeConstraints { make in
-//            make.left.equalTo(30)
-//            make.top.equalTo(adsCountView.snp.bottom).offset(20)
-//            make.right.equalTo(-30)
-//            make.height.equalTo(30)
-//        }
-        
-        
-        
-//        self.backgroundColor = .yellow
         addSubview(armorImageView)
         armorImageView.snp.remakeConstraints { make in
             make.top.equalTo(self).offset(20)
@@ -269,7 +157,7 @@ class OsirisArmorView: UIView, Themeable {
         adsCountView.addSubview(adsBloclImageView)
         
         adsBloclImageView.snp.remakeConstraints { make in
-            make.left.equalTo(adsCountView).offset(5)
+            make.left.equalTo(adsCountView)
             make.width.equalTo(30)
             make.height.equalTo(50)
             make.centerY.equalTo(adsCountView)
@@ -278,8 +166,9 @@ class OsirisArmorView: UIView, Themeable {
         adsCountView.addSubview(adBlockLabel)
         
         adBlockLabel.snp.remakeConstraints { make in
-            make.left.equalTo(adsBloclImageView.snp.right).offset(15)
-            make.width.equalTo(20)
+            make.left.equalTo(adsBloclImageView.snp.right).offset(10)
+//            make.width.equalTo(40)
+//            make.right.equalTo(adBlockTitleLabel).offset(-10)
             make.height.equalTo(30)
             make.centerY.equalTo(adsCountView)
         }
@@ -287,14 +176,13 @@ class OsirisArmorView: UIView, Themeable {
         adsCountView.addSubview(adBlockTitleLabel)
         
         adBlockTitleLabel.snp.remakeConstraints { make in
-            make.left.equalTo(adBlockLabel.snp.right).offset(15)
+            make.left.equalTo(adBlockLabel.snp.right).offset(10)
             make.right.equalTo(adsCountView.snp.right)
             make.height.equalTo(30)
             make.centerY.equalTo(adsCountView)
         }
         
         addSubview(brokenSiteTitleLabel)
-        
         
 //        [shieldsDownDisclaimerLabel, reportSiteButton].forEach(shieldsDownStackView.addArrangedSubview)
         stackView.addStackViewItems(

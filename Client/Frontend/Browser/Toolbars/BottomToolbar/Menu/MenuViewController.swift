@@ -105,7 +105,7 @@ class MenuViewController: UITableViewController {
         var title: String {
             switch self {
 //            case .vpn: return Strings.VPN.vpnMenuItemTitle
-            case .osiris: return "Osiris (v1.2.0)"
+            case .osiris: return Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "No Version"//"Osiris (v1.2.0)"
             case .bookmarks: return Strings.bookmarksMenuItem
             case .history: return Strings.historyMenuItem
             case .settings: return Strings.settingsMenuItem
