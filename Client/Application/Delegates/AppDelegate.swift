@@ -71,7 +71,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UIViewControllerRestorati
         self.braveCore = BraveCoreMain()
         self.braveCore?.setUserAgent(UserAgent.mobile)
 
-        
         SceneObserver.setupApplication(window: self.window!)
 
         AdBlockStats.shared.startLoading()

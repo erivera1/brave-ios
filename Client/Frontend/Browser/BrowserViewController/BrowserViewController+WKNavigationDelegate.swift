@@ -433,7 +433,6 @@ extension BrowserViewController: WKNavigationDelegate {
                 // Set rewards inter site url as new page load url.
                 rewardsXHRLoadURL = webView.url
             }
-            
             tabsBar.reloadDataAndRestoreSelectedTab()
         }
     }

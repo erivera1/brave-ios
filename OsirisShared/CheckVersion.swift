@@ -42,7 +42,7 @@ class CheckUpdate: NSObject {
                 if let appStoreAppVersion = info?.version {
                     if let error = error {
                         print("error getting app store version: ", error)
-                    } else if appStoreAppVersion == currentVersion {
+                    } else if currentVersion > appStoreAppVersion {
                         print("Already on the last app version: ", currentVersion)
                     } else {
                         print("Needs update: AppStore Version: \(appStoreAppVersion) > Current version: ", currentVersion)
@@ -60,9 +60,9 @@ class CheckUpdate: NSObject {
     
       // You should pay attention on the country that your app is located, in my case I put Brazil */br/*
       // Você deve prestar atenção em que país o app está disponível, no meu caso eu coloquei Brasil */br/*
-      
-        guard let identifier = self.getBundle(key: "CFBundleIdentifier"),
-              let url = URL(string: "http://itunes.apple.com/br/lookup?bundleId=\(identifier)") else {
+        let identifier = "decenternet.osiris-2.ios"
+//        guard let identifier = "decenternet.osiris-2.ios",//self.getBundle(key: "CFBundleIdentifier"),
+        guard let url = URL(string: "http://itunes.apple.com/br/lookup?bundleId=\(identifier)") else {
                 DispatchQueue.main.async {
                     completion(nil, VersionError.invalidBundleInfo)
                 }
@@ -70,7 +70,6 @@ class CheckUpdate: NSObject {
         }
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
           
-            
                 do {
                     if let error = error { throw error }
                     guard let data = data else { throw VersionError.invalidResponse }

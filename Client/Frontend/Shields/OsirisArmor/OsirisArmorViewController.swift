@@ -65,22 +65,27 @@ class OsirisArmorViewController: ShieldsViewController {
 
         self.view.sendSubviewToBack(backgroundImageView)
 
-        updatePreferredContentSize()
-        
-        updateOsirisShieldBlockStats()
-        navigationController?.setNavigationBarHidden(true, animated: false)
-
-        updateToggleStatus()
-
-        shieldControlMapping.forEach { shield, toggle, option in
-            toggle.valueToggled = { [unowned self] on in
-                // Localized / per domain toggles triggered here
-                self.updateBraveShieldState(shield: shield, on: on, option: option)
-                // Wait a fraction of a second to allow DB write to complete otherwise it will not use the
-                // updated shield settings when reloading the page
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-                    self.shieldsSettingsChanged?(self)
-                }
+//        updatePreferredContentSize()
+//
+//        updateOsirisShieldBlockStats()
+//        navigationController?.setNavigationBarHidden(true, animated: false)
+//
+//        updateToggleStatus()
+//
+//        shieldControlMapping.forEach { shield, toggle, option in
+//            toggle.valueToggled = { [unowned self] on in
+//                // Localized / per domain toggles triggered here
+//                self.updateBraveShieldState(shield: shield, on: on, option: option)
+//                // Wait a fraction of a second to allow DB write to complete otherwise it will not use the
+//                // updated shield settings when reloading the page
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+//                    self.shieldsSettingsChanged?(self)
+//                }
+//            }
+//        }
+        if let url = url {
+            if OsirisHelper().disableBlocking(url: url) {
+                shieldsView.simpleShieldView.osirisArmorView.shieldsSwitch.isEnabled = false
             }
         }
         
