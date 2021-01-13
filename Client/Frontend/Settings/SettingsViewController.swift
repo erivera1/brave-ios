@@ -247,12 +247,12 @@ class SettingsViewController: TableViewController {
         }
         
         if AppConstants.iOSVersionGreaterThanOrEqual(to: 14) && AppConstants.buildChannel == .release {
-            general.rows.append(.init(text: Strings.setDefaultBrowserSettingsCell, selection: { [unowned self] in
-                guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
-                    return
-                }
-                UIApplication.shared.open(settingsUrl)
-            }, cellClass: MultilineButtonCell.self))
+//            general.rows.append(.init(text: Strings.setDefaultBrowserSettingsCell, selection: { [unowned self] in
+//                guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
+//                    return
+//                }
+//                UIApplication.shared.open(settingsUrl)
+//            }, cellClass: MultilineButtonCell.self))
         }
         
         return general

@@ -232,7 +232,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UIViewControllerRestorati
             icon: UIApplicationShortcutIcon(templateImageName: "quick_action_new_private_tab"),
             userInfo: [:])
         
-        application.shortcutItems = Preferences.Privacy.privateBrowsingOnly.value ? [privateTabItem] : [newTabItem, privateTabItem]
+        application.shortcutItems = Preferences.Privacy.privateBrowsingOnly.value ? [privateTabItem] : [newTabItem]
     }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {

@@ -360,10 +360,10 @@ class BrowserViewController: UIViewController {
                     || Bookmark.hasFavorites { return }
                 
                 guard let sites = sites, sites.count > 0 else {
-                    FavoritesHelper.addDefaultFavorites()
+                    // FavoritesHelper.addDefaultFavorites()
                     return
                 }
-                
+                 
                 let customFavorites = sites.compactMap { $0.asFavoriteSite }
                 Bookmark.addFavorites(from: customFavorites)
             }

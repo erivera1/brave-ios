@@ -319,7 +319,7 @@ class NewTabPageViewController: UIViewController, Themeable {
             backgroundButtonsView.activeButton = .none
         }
         
-        backgroundView.gradientView.isHidden = background.backgroundImage == nil
+        backgroundView.gradientView.isHidden = true // background.backgroundImage == nil
         backgroundView.imageView.image = background.backgroundImage
         
         guard let image = backgroundView.imageView.image else {
